@@ -1,0 +1,53 @@
+/* animate background gradient */
+
+@-webkit-keyframes animate-gradient {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes animate-gradient {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* mixin for gradient animation */
+
+@mixin gradient-animation($start, $end) {
+    background-size: 100%;
+    background-image: -webkit-linear-gradient(to right, $start, $end);
+    background-image: linear-gradient(to right, $start, $end);
+    position: relative;
+    z-index: 100;
+    &:before {
+        border-radius: inherit;
+        background-image: -webkit-linear-gradient(to right, $end, $start);
+        background-image: linear-gradient(to right, $end, $start);
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -100;
+        -webkit-animation: animate-gradient 10s infinite;
+        animation: animate-gradient 10s infinite;
+    }
+}
+
+#wrapper {
+    @include gradient-animation (#ef913f, #ffd77c);
+    padding: 4rem 4rem 10rem;
+}

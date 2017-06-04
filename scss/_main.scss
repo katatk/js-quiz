@@ -1,0 +1,139 @@
+ html {
+     font-size: 10px;
+     box-sizing: border-box;
+ }
+ 
+ *,
+ *:before,
+ *:after {
+     box-sizing: inherit;
+ }
+ 
+ body {
+     font-size: 1.4rem;
+     font-family: 'Varela round', sans-serif;
+     color: #444;
+     padding: 0;
+     margin: 0;
+ }
+ 
+ h1 {
+     color: #fff;
+     text-align: center;
+     font: 6rem 'Unica One', cursive;
+     margin-bottom: 0;
+ }
+ 
+ .container {
+     text-align: center;
+     max-width: 600px;
+ }
+ 
+ .inner {
+     padding: 2rem;
+     background-color: #ECF0F1;
+     margin-top: 2rem;
+     border: 1px solid #C1C2C4;
+     border-radius: 5px;
+ }
+ /* hide the second and third divs initially */
+ /*  #two,
+        #three {
+            display: none;
+        }*/
+ 
+ .question-heading {
+     display: block;
+     border-bottom: 1px solid #C1C2C4;
+     padding-bottom: 0.5rem;
+     margin-bottom: 1rem;
+     width: 100%;
+ }
+ 
+ input[type=text],
+ input[type=email] {
+     margin: 1rem auto 2rem;
+     padding: 1rem;
+     max-width: 100%;
+     text-align: center;
+     display: block;
+     font-family: 'Varela round', sans-serif;
+     border-radius: 5px;
+     border: 1px solid #C1C2C4;
+ }
+ 
+ ::-webkit-input-placeholder {
+     /* Chrome/Opera/Safari */
+     color: #b9b9b9;
+ }
+ 
+ ::-moz-placeholder {
+     /* Firefox 19+ */
+     color: #b9b9b9;
+ }
+ 
+ :-ms-input-placeholder {
+     /* IE 10+ */
+     color: #b9b9b9;
+ }
+ 
+ :-moz-placeholder {
+     /* Firefox 18- */
+     color: #b9b9b9;
+ }
+ 
+ .btn-container {
+     margin-top: 2rem;
+ }
+ 
+ button {
+     background-color: hsl(164, 66%, 43%);
+     color: #fff;
+     border: 0;
+     padding: 1rem;
+     margin: 0 auto 1rem;
+     display: block;
+     flex-grow: 0;
+     font-size: 1.4rem;
+     font-family: 'Varela round', sans-serif;
+     border-radius: 5px;
+     position: relative;
+     &:hover {
+         cursor: pointer;
+         background-color: hsl(164, 66%, 33%);
+         top: 2px;
+     }
+ }
+ 
+ .message-container {
+     color: #fff;
+     text-align: center;
+     padding: 2rem 2rem 0;
+     display: inline-block;
+ }
+ 
+ @media (min-width: 480px) {
+     body,
+     button {
+         font-size: 1.6rem;
+     }
+     button {
+         display: inline-block;
+         margin-left: 1rem;
+     }
+     input[type=text],
+     input[type=email] {
+         margin-left: 0;
+     }
+     .container,
+     h1,
+     input[type=text],
+     input[type=email],
+     .message-container {
+         text-align: left;
+     }
+     .last {
+         display: flex;
+         justify-content: space-between;
+     }
+ }

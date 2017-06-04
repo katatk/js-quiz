@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JavaScript Quiz</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Unica+One" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <main role="main">
+        <div id="wrapper">
+            <h1>Javascript Quiz</h1>
+            <div class="container" id="one">
+
+                <div class="inner">
+                    <div class="form-group" id="name-group">
+                        <label for="full-name">Please provide your full name:</label>
+                        <input type="text" id="full-name" placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group" id="email-group">
+                        <label for="email">Please provide your email address:</label>
+                        <input type="email" id="email" placeholder="you@mail.com">
+                    </div>
+
+
+                </div>
+                <div class="last">
+                    <div class="message-container">
+                        <span class="error-message">Error message goes here...</span>
+                    </div>
+                    <div class="btn-container">
+                        <button>Start quiz</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="two">
+
+                <div class="inner">
+                    <div class="form-group" id="question-one">
+                        <legend class="question-heading">1. What is the correct way to link JavaScript?</legend>
+                        <div class="radio-group">
+                            <input type="radio">
+                            <label for="male"><code>&lt;script href="script.js" type="text/javascript"&gt;</code></label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio">
+                            <label for="other"><code>&lt;script src="script.js" rel="text/javascript"&gt;</code></label>
+                        </div>
+
+
+                        <div class="radio-group">
+                            <input type="radio">
+
+                            <label for="female"><code>&lt;srcipt href="script.js" rel="text/javascript"&gt;</code></label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio">
+                            <label for="other"><code>&lt;script src="script.js" type="text/javascript"&gt;</code></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inner">
+                    <div class="form-group" id="question-two">
+                        <legend class="question-heading">2. Is JavaScript case-sensitive?</legend>
+
+                        <div class="radio-group">
+                            <input type="radio">
+                            <label for="female">Yes, it's fussy about case</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio">
+                            <label for="male">No, it doesn't give a fu--</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inner">
+                    <div class="form-group" id="question-three">
+                        <legend class="question-heading">3. Which statement is not true for <code>var num = 3</code>?</legend>
+
+                        <div class="radio-group">
+                            <input type="radio">
+                            <label for="female">num == "3"</label>
+                        </div>
+
+                        <div class="radio-group">
+                            <input type="radio">
+                            <label for="male">num === 3</label>
+                        </div>
+                        
+                          <div class="radio-group">
+                            <input type="radio">
+                            <label for="female">num != '4'</label>
+                        </div>
+
+
+                        <div class="radio-group">
+                            <input type="radio">
+                            <label for="other">num === "3"</label>
+                        </div>
+
+                        <div class="radio-group">
+                            <input type="radio">
+                            <label for="female">num == 3</label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="last">
+                    <div class="message-container">
+                        <span class="error-message">Error message goes here...</span>
+                    </div>
+
+                    <div class="btn-container">
+                        <button>Retry</button>
+                        <button>Calculate Score</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" id="three">
+                <div class="message-container">
+                    <span>Congratulations on completing the quiz <span class="name">NAME</span>!</span><br>
+                    <span>Your score is <span id="score">SCORE</span> out of <span id="questions">TOTAL</span>!</span>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="quiz.js"></script>
+
+</body>
+
+</html>
