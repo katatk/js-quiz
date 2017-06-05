@@ -10,6 +10,8 @@
 
     <title>JavaScript Quiz</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Unica+One" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <link href="css/fontello-embedded.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -29,14 +31,13 @@
                         <input type="email" id="email" placeholder="you@mail.com">
                     </div>
 
-
                 </div>
                 <div class="last">
                     <div class="message-container">
-                        <span class="error-message">Error message goes here...</span>
+                        <span id="validation-message"></span>
                     </div>
                     <div class="btn-container">
-                        <button>Start quiz</button>
+                        <button id="start">Start quiz <i class="icon-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -46,23 +47,21 @@
                     <div class="form-group" id="question-one">
                         <legend class="question-heading">1. What is the correct way to link JavaScript?</legend>
                         <div class="radio-group">
-                            <input type="radio">
-                            <label for="male"><code>&lt;script href="script.js" type="text/javascript"&gt;</code></label>
+                            <input type="radio" name="link">
+                            <label><code>&lt;script href="script.js" type="text/javascript"&gt;</code></label>
                         </div>
                         <div class="radio-group">
-                            <input type="radio">
-                            <label for="other"><code>&lt;script src="script.js" rel="text/javascript"&gt;</code></label>
-                        </div>
-
-
-                        <div class="radio-group">
-                            <input type="radio">
-
-                            <label for="female"><code>&lt;srcipt href="script.js" rel="text/javascript"&gt;</code></label>
+                            <input type="radio" name="link">
+                            <label><code>&lt;script src="script.js" rel="text/javascript"&gt;</code></label>
                         </div>
                         <div class="radio-group">
-                            <input type="radio">
-                            <label for="other"><code>&lt;script src="script.js" type="text/javascript"&gt;</code></label>
+                            <input type="radio" name="link">
+
+                            <label><code>&lt;srcipt href="script.js" rel="text/javascript"&gt;</code></label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" name="link" class="correct">
+                            <label><code>&lt;script src="script.js" type="text/javascript"&gt;</code></label>
                         </div>
                     </div>
                 </div>
@@ -72,12 +71,12 @@
                         <legend class="question-heading">2. Is JavaScript case-sensitive?</legend>
 
                         <div class="radio-group">
-                            <input type="radio">
-                            <label for="female">Yes, it's fussy about case</label>
+                            <input type="radio" name="case" class="correct">
+                            <label>Yes, it's fussy about case</label>
                         </div>
                         <div class="radio-group">
-                            <input type="radio">
-                            <label for="male">No, it doesn't give a fu--</label>
+                            <input type="radio"  name="case">
+                            <label>No, it doesn't give a fu--</label>
                         </div>
                     </div>
                 </div>
@@ -87,29 +86,28 @@
                         <legend class="question-heading">3. Which statement is not true for <code>var num = 3</code>?</legend>
 
                         <div class="radio-group">
-                            <input type="radio">
-                            <label for="female">num == "3"</label>
+                            <input type="radio" name="var">
+                            <label>num == "3"</label>
                         </div>
 
                         <div class="radio-group">
-                            <input type="radio">
-                            <label for="male">num === 3</label>
-                        </div>
-                        
-                          <div class="radio-group">
-                            <input type="radio">
-                            <label for="female">num != '4'</label>
-                        </div>
-
-
-                        <div class="radio-group">
-                            <input type="radio">
-                            <label for="other">num === "3"</label>
+                            <input type="radio" name="var">
+                            <label>num === 3</label>
                         </div>
 
                         <div class="radio-group">
-                            <input type="radio">
-                            <label for="female">num == 3</label>
+                            <input type="radio" name="var">
+                            <label>num != '4'</label>
+                        </div>
+
+                        <div class="radio-group">
+                            <input type="radio" name="var" class="correct">
+                            <label>num === "3"</label>
+                        </div>
+
+                        <div class="radio-group">
+                            <input type="radio" name="var">
+                            <label>num == 3</label>
                         </div>
 
                     </div>
@@ -120,23 +118,26 @@
                     </div>
 
                     <div class="btn-container">
-                        <button>Retry</button>
-                        <button>Calculate Score</button>
+                        <button id="retry"><i class="icon-cw"></i>Retry</button>
+                        <button id="calculate">Calculate Score</button>
                     </div>
                 </div>
             </div>
 
             <div class="container" id="three">
-                <div class="message-container">
-                    <span>Congratulations on completing the quiz <span class="name">NAME</span>!</span><br>
-                    <span>Your score is <span id="score">SCORE</span> out of <span id="questions">TOTAL</span>!</span>
-
+                <div class="last">
+                    <div class="message-container">
+                        <span>Congratulations on completing the quiz <span class="name">NAME</span>!</span><br>
+                        <span>Your score is <span id="score">SCORE</span> out of <span id="total">TOTAL</span>!</span>
+                    </div>
+                    <div class="btn-container">
+                        <button id="restart"><i class="icon-left"></i>Back to start</button>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
     <script src="quiz.js"></script>
-
 </body>
 
 </html>

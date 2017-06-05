@@ -23,7 +23,7 @@
 
 /* mixin for gradient animation */
 
-@mixin gradient-animation($start, $end) {
+@mixin gradient-animation($start, $end, $duration) {
     background-size: 100%;
     background-image: -webkit-linear-gradient(to right, $start, $end);
     background-image: linear-gradient(to right, $start, $end);
@@ -42,12 +42,12 @@
         left: 0;
         opacity: 0;
         z-index: -100;
-        -webkit-animation: animate-gradient 10s infinite;
-        animation: animate-gradient 10s infinite;
+        -webkit-animation: animate-gradient $duration infinite;
+        animation: animate-gradient $duration infinite;
     }
 }
 
 #wrapper {
-    @include gradient-animation (#ef913f, #ffd77c);
+    @include gradient-animation (#f58625, #fccb88, 12s);
     padding: 4rem 4rem 10rem;
 }

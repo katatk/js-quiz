@@ -37,10 +37,11 @@
      border-radius: 5px;
  }
  /* hide the second and third divs initially */
- /*  #two,
-        #three {
-            display: none;
-        }*/
+ 
+ #two,
+ #three {
+     display: none;
+ }
  
  .question-heading {
      display: block;
@@ -104,12 +105,23 @@
          top: 2px;
      }
  }
+ /* give retry and back to start icons right margin */
+ 
+ .icon-cw,
+ .icon-left {
+     margin-right: 0.2em;
+ }
  
  .message-container {
      color: #fff;
      text-align: center;
      padding: 2rem 2rem 0;
      display: inline-block;
+ }
+ 
+ ul {
+     margin: 0;
+     padding: 0;
  }
  
  @media (min-width: 480px) {
