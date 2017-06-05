@@ -5,7 +5,6 @@ var btnCalc = document.getElementById("calculate");
 var btnRestart = document.getElementById("restart");
 
 // get the three divs
-
 var divOne = document.getElementById("one");
 var divTwo = document.getElementById("two");
 var divThree = document.getElementById("three");
@@ -16,26 +15,60 @@ btnRetry.addEventListener("click", retryQuiz);
 btnCalc.addEventListener("click", calcScore);
 btnRestart.addEventListener("click", restartQuiz);
 
-// question objects
-var questionOne = {
-    title: "1. What is the correct way to link JavaScript?",
-    answers: ['<code>&lt;script href="script.js" type="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;srcipt href="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" type="text/javascript"&gt;</code>'],
-    correctAnswer: 4
-};
+// question array
+var questions = [
+questionOne = {
+        title: "1. What is the correct way to link JavaScript?",
+        answers: ['<code>&lt;script href="script.js" type="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;srcipt href="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" type="text/javascript"&gt;</code>'],
+        correctAnswer: 4,
+        name: "link"
+},
 
-var questionTwo = {
-    title: "2. Is JavaScript case-sensitive?",
-    answers: ['Yes, it\'s fussy about case', 'No, it doesn\'t give a fu--'],
-    correctAnswer: 1
-};
+questionTwo = {
+        title: "2. Is JavaScript case-sensitive?",
+        answers: ['Yes, it\'s fussy about case', 'No, it doesn\'t give a fu--'],
+        correctAnswer: 1,
+        name: "case"
+},
 
-var questionThree = {
-    title: "3. Which statement is not true for <code>var num = 3</code>?",
-    answers: ['num == "3"', 'num === 3', "num != '4'", 'num === "3"', 'num == 3'],
-    correctAnswer: 4
-};
+questionThree = {
+        title: "3. Which statement is not true for <code>var num = 3</code>?",
+        answers: ['num == "3"', 'num === 3', "num != '4'", 'num === "3"', 'num == 3'],
+        correctAnswer: 4,
+        name: "var"
+}];
 
-// validate the user input
+
+output = "";
+
+// get the container to set the output to
+var questionsContainer = document.getElementById("questions-container");
+
+// build the html
+for (x in questions) {
+    output += "<div class='inner'>";
+    output += "<div>";
+    output += "<legend class='question-heading'>" + questions[x].title + "</legend>";
+
+    for (j = 0; j < questions[x].answers.length; j++) {
+        output += "<div>";
+        output += "<input type='radio' name='" + questions[x].case+"'>";
+        output += "<label>" + questions[x].answers[j] + "</label>";
+        output += "</div>";
+    }
+
+    output += "</div>";
+    output += "</div>";
+}
+
+questionsContainer.innerHTML = output;
+
+/* ========
+
+Validate User Input
+
+=========== */
+
 function validateInput() {
 
     var errorMessage = "";
@@ -81,6 +114,12 @@ function validateInput() {
 
 }
 
+/* ========
+
+Calculate Score
+
+=========== */
+
 // set the user's score
 var score = 0;
 
@@ -112,8 +151,16 @@ function calcScore() {
     divThree.style.display = 'block';
 }
 
+/* ========
+
+Retry Quiz
+
+=========== */
+
 // get all radio buttons
 var allAnswers = document.querySelectorAll('input[type=radio]');
+
+
 
 function retryQuiz() {
 
@@ -124,7 +171,11 @@ function retryQuiz() {
 }
 
 
-// restart quiz (show first div and hide all others)
+/* ========
+
+Restart Quiz
+
+=========== */
 
 function restartQuiz() {
     document.getElementById("full-name").value = "";
