@@ -47,7 +47,7 @@
     }
 }
 
-#wrapper {
+body {
     @include gradient-animation (#f58625, #fccb88, 12s);
     padding: 4rem 4rem 10rem;
 }

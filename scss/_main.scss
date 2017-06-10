@@ -1,6 +1,7 @@
  html {
      font-size: 10px;
      box-sizing: border-box;
+     height: 100%;
  }
  
  *,
@@ -15,6 +16,7 @@
      color: #444;
      padding: 0;
      margin: 0;
+     min-height: 100%;
  }
  
  h1 {
@@ -87,6 +89,18 @@
      margin-top: 2rem;
  }
  
+ .last {
+     margin-top: 0;
+ }
+ 
+ .message-container {
+     margin-top: 2rem;
+     color: #fff;
+     text-align: center;
+     display: block;
+     width: 100%;
+ }
+ 
  button {
      background-color: hsl(164, 66%, 43%);
      color: #fff;
@@ -112,17 +126,14 @@
      margin-right: 0.2em;
  }
  
- .message-container {
-     color: #fff;
-     text-align: center;
-     padding: 2rem 2rem 0;
-     display: inline-block;
- }
- 
  ul {
      margin: 0;
      padding: 0;
  }
+
+li {
+    list-style-position: inside;
+}
  
  @media (min-width: 480px) {
      body,
@@ -143,6 +154,19 @@
      input[type=email],
      .message-container {
          text-align: left;
+     }
+     .last {
+         margin-top: 2rem;
+     }
+     .message-container {
+         margin-top: 0;
+     }
+ }
+ 
+ @media (min-width: 690px) {
+     .message-container {
+         display: inline-block;
+         max-width: 58%;
      }
      .last {
          display: flex;

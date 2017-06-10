@@ -18,24 +18,24 @@ btnRestart.addEventListener("click", restartQuiz);
 // question array
 var questions = [
 questionOne = {
+        number: 1,
         title: "1. What is the correct way to link JavaScript?",
         answers: ['<code>&lt;script href="script.js" type="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;srcipt href="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" type="text/javascript"&gt;</code>'],
-        correctAnswer: 4,
-        name: "link"
+        correctAnswer: 3
 },
 
 questionTwo = {
+        number: 2,
         title: "2. Is JavaScript case-sensitive?",
         answers: ['Yes, it\'s fussy about case', 'No, it doesn\'t give a fu--'],
-        correctAnswer: 1,
-        name: "case"
+        correctAnswer: 0
 },
 
 questionThree = {
+        number: 3,
         title: "3. Which statement is not true for <code>var num = 3</code>?",
         answers: ['num == "3"', 'num === 3', "num != '4'", 'num === "3"', 'num == 3'],
-        correctAnswer: 4,
-        name: "var"
+        correctAnswer: 3
 }];
 
 
@@ -50,9 +50,9 @@ for (x in questions) {
     output += "<div>";
     output += "<legend class='question-heading'>" + questions[x].title + "</legend>";
 
-    for (j = 0; j < questions[x].answers.length; j++) {
+    for (var j = 0; j < questions[x].answers.length; j++) {
         output += "<div>";
-        output += "<input type='radio' name='" + questions[x].case+"'>";
+        output += "<input type='radio' name='q" + questions[x].number + "'>";
         output += "<label>" + questions[x].answers[j] + "</label>";
         output += "</div>";
     }
@@ -62,6 +62,9 @@ for (x in questions) {
 }
 
 questionsContainer.innerHTML = output;
+
+// print total to page (equal to length of questions array)
+document.getElementById("total").innerHTML = questions.length;
 
 /* ========
 
@@ -106,7 +109,7 @@ function validateInput() {
         divTwo.style.display = 'block';
         divOne.style.display = 'none';
         // print the user's name to the last div
-        document.querySelector('.name').innerHTML = strFullName;
+        document.querySelector('.name').innerHTML = strFullName.split(" ")[0];
     }
 
     // reset error message and name and email fields
@@ -120,36 +123,61 @@ Calculate Score
 
 =========== */
 
-// set the user's score
-var score = 0;
-
-// get all the correct answers
-var correctAnswers = document.querySelectorAll('input.correct');
-
-// set total questions
-var totalQuestions = correctAnswers.length;
-
-// go through every item in correct answer array to see if it's checked, if checked, increase score
 function calcScore() {
+    // set the user's score
+    var score = 0;
 
-    for (answer in correctAnswers) {
-        if (correctAnswers[answer].checked == true) {
+    var unansweredMessage = "";
 
-            score++;
+    for (x in questions) {
+        // store correct answer for each question 
+        var correct = questions[x].correctAnswer;
+
+        // get the radio buttons to loop through and see if they're checked
+        var questionAnswers = document.querySelectorAll('[name=q' + questions[x].number + ']');
+        var isChecked = false;
+
+        // loop through all the answers to see if they are checked, if a checked answer is the correct answer, add 1 to the score
+        for (var j = 0; j < questions[x].answers.length; j++) {
+
+            // if an answer is checked, then see if it is the correct answer
+            if (questionAnswers[j].checked === true) {
+                console.log(questionAnswers[j]);
+                isChecked = true;
+
+                // if correct answer, add to score
+                if (j == correct) {
+                    score++;
+                }
+
+            }
         }
 
+        // If there was no radio buttons checked for the question we need to add to unanswered string.
+        if (isChecked === false) {
+            unansweredMessage += questions[x].number + ", ";
+        }
+    }
+
+
+    // if none are checked, throw an error
+    if (unansweredMessage !== "") {
+        document.querySelector(".error-message").innerHTML = "Halt! You must answer all the questions first, you missed the following: " + unansweredMessage;
+    } else {
+        // hide second div and show third 
+        divTwo.style.display = 'none';
+        divThree.style.display = 'block';
     }
 
     // update page to reflect score
-    document.getElementById("score").innerHTML = score;
-    document.getElementById("total").innerHTML = totalQuestions;
+    var scoreContainer = document.getElementById("score");
+    scoreContainer.innerHTML = score;
 
-    score = 0;
 
-    /* hide second div and show third */
-    divTwo.style.display = 'none';
-    divThree.style.display = 'block';
+
+
 }
+
 
 /* ========
 
@@ -157,18 +185,19 @@ Retry Quiz
 
 =========== */
 
-// get all radio buttons
-var allAnswers = document.querySelectorAll('input[type=radio]');
-
-
 
 function retryQuiz() {
+
+    // get all radio buttons
+    var allAnswers = document.querySelectorAll('input[type=radio]');
 
     // uncheck all radio buttons
     for (answer in allAnswers) {
         allAnswers[answer].checked = false;
     }
+    document.querySelector(".error-message").innerHTML = "";
 }
+
 
 
 /* ========
@@ -183,5 +212,8 @@ function restartQuiz() {
     /* hide second div and show third */
     divThree.style.display = 'none';
     divOne.style.display = 'block';
+    
+    // clear all radio buttons and remove missed questions message
+    retryQuiz();
 
 }
