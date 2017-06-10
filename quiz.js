@@ -19,7 +19,7 @@ btnRestart.addEventListener("click", restartQuiz);
 var questions = [
 questionOne = {
         number: 1,
-        title: "1. What is the correct way to link JavaScript?",
+        title: "1. Which is the correct way to link a JavaScript file in your HTML?",
         answers: ['<code>&lt;script href="script.js" type="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;srcipt href="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" type="text/javascript"&gt;</code>'],
         correctAnswer: 3
 },
@@ -34,7 +34,7 @@ questionTwo = {
 questionThree = {
         number: 3,
         title: "3. Which statement is not true for <code>var num = 3</code>?",
-        answers: ['num == "3"', 'num === 3', "num != '4'", 'num === "3"', 'num == 3'],
+        answers: ['num == "3"', 'num === 3', "num != 4", 'num === "3"', 'num == 3'],
         correctAnswer: 3
 }];
 
@@ -85,19 +85,19 @@ function validateInput() {
 
     // validate full name
     if (strFullName == "") {
-        errorMessage += "<li>Please enter a name</li>";
+        errorMessage += "<li><i class='icon-cancel'></i>Please enter a name</li>";
 
     } else if (!/^[a-zA-Z]+\s[a-zA-Z]+$/.test(strFullName)) {
-        errorMessage += "<li>" + strFullName + " is NOT a valid first and last name</li>";
+        errorMessage += "<li><i class='icon-cancel'></i>" + strFullName + " is NOT a valid first and last name</li>";
     }
 
     // validate email
     if (strEmail == "") {
-        errorMessage += "<li>Please enter an email address</li>";
+        errorMessage += "<li><i class='icon-cancel'></i>Please enter an email address</li>";
 
 
     } else if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(strEmail)) {
-        errorMessage += "<li>" + strEmail + " is NOT a valid email address</li>";
+        errorMessage += "<li><i class='icon-cancel'></i>" + strEmail + " is NOT a valid email address</li>";
 
     }
 

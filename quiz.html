@@ -10,64 +10,62 @@
 
     <title>JavaScript Quiz</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Unica+One" rel="stylesheet">
-    <link href="css/fontello.css" rel="stylesheet">
-    <link href="css/fontello-embedded.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-        <div id="wrapper">
-            <h1>Javascript Quiz</h1>
-            <div class="container" id="one">
+    <div id="wrapper">
+        <h1>Javascript Quiz</h1>
+        <div class="container" id="one">
 
-                <div class="inner">
-                    <div>
-                        <label for="full-name">Please provide your full name:</label>
-                        <input type="text" id="full-name" placeholder="Jane Doe">
-                    </div>
-                    <div>
-                        <label for="email">Please provide your email address:</label>
-                        <input type="email" id="email" placeholder="you@mail.com">
-                    </div>
+            <div class="inner">
+                <div>
+                    <label for="full-name">Please enter your full name:</label>
+                    <input type="text" id="full-name" placeholder="Jane Doe">
+                </div>
+                <div>
+                    <label for="email">Please enter your email address:</label>
+                    <input type="email" id="email" placeholder="you@mail.com">
+                </div>
 
-                </div>
-                <div class="last">
-                    <div class="message-container">
-                        <span id="validation-message"></span>
-                    </div>
-                    <div class="btn-container">
-                        <button id="start">Start quiz <i class="icon-right"></i></button>
-                    </div>
-                </div>
             </div>
-            <div class="container" id="two">
-                <div id="questions-container">
-
+            <div class="last">
+                <div class="message-container">
+                    <span id="validation-message"></span>
                 </div>
-                <div class="last">
-                    <div class="message-container">
-                        <span class="error-message"></span>
-                    </div>
-
-                    <div class="btn-container">
-                        <button id="retry"><i class="icon-cw"></i>Retry</button>
-                        <button id="calculate">Calculate Score</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container" id="three">
-                <div class="last">
-                    <div class="message-container">
-                        <span>Congratulations on completing the quiz <span class="name">NAME</span>!</span><br>
-                        <span>Your score is <span id="score">SCORE</span> out of <span id="total">TOTAL</span>!</span>
-                    </div>
-                    <div class="btn-container">
-                        <button id="restart"><i class="icon-left"></i>Back to start</button>
-                    </div>
+                <div class="btn-container">
+                    <button id="start">Start quiz <i class="icon-right"></i></button>
                 </div>
             </div>
         </div>
+        <div class="container" id="two">
+            <div id="questions-container">
+
+            </div>
+            <div class="last">
+                <div class="message-container">
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="btn-container">
+                    <button id="retry"><i class="icon-cw"></i>Retry</button>
+                    <button id="calculate">Calculate Score</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="three">
+            <div class="last">
+                <div class="message-container">
+                    <span>Congratulations on completing the quiz <span class="name">NAME</span>!</span><br>
+                    <span>Your score is <span id="score">SCORE</span> out of <span id="total">TOTAL</span>!</span>
+                </div>
+                <div class="btn-container">
+                    <button id="restart"><i class="icon-left"></i>Back to start</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="quiz.js"></script>
 </body>
 

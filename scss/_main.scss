@@ -100,9 +100,12 @@
      display: block;
      width: 100%;
  }
- 
+
+$btn-color: #25a9ad;
+$btn-hover-color: darken(#25a9ad, 10%);
+
  button {
-     background-color: hsl(164, 66%, 43%);
+     background-color: $btn-color;
      color: #fff;
      border: 0;
      padding: 1rem;
@@ -115,7 +118,7 @@
      position: relative;
      &:hover {
          cursor: pointer;
-         background-color: hsl(164, 66%, 33%);
+         background-color: $btn-hover-color;
          top: 2px;
      }
  }
@@ -129,10 +132,25 @@
  ul {
      margin: 0;
      padding: 0;
+     list-style: none;
+ }
+ 
+ li {
+     list-style-position: inside;
+    
+     /*
+     &:before {
+         content: '0xe803';
+         font-family: 'fontello';
+         display: inline-block;
+         margin-left: -1.3em;
+         width: 1.3em;
+     }*/
  }
 
-li {
-    list-style-position: inside;
+.icon-cancel {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
 }
  
  @media (min-width: 480px) {
@@ -142,7 +160,7 @@ li {
      }
      button {
          display: inline-block;
-         margin-left: 1rem;
+        
      }
      input[type=text],
      input[type=email] {
@@ -158,9 +176,7 @@ li {
      .last {
          margin-top: 2rem;
      }
-     .message-container {
-         margin-top: 0;
-     }
+   
  }
  
  @media (min-width: 690px) {
@@ -171,5 +187,11 @@ li {
      .last {
          display: flex;
          justify-content: space-between;
+     }
+       .message-container, .btn-container {
+         margin-top: 0;
+     }
+     button {
+          margin-left: 1rem;
      }
  }
