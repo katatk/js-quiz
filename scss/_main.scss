@@ -63,11 +63,11 @@
      border-radius: 5px;
      border: 1px solid #C1C2C4;
  }
-
-input[type=email] {
-    @extend input[type=text];
-    margin-bottom: 0;
-}
+ 
+ input[type=email] {
+     @extend input[type=text];
+     margin-bottom: 0;
+ }
  
  ::-webkit-input-placeholder {
      /* Chrome/Opera/Safari */
@@ -104,10 +104,9 @@ input[type=email] {
      display: block;
      width: 100%;
  }
-
-$btn-color: #25a9ad;
-$btn-hover-color: darken(#25a9ad, 10%);
-
+ 
+ $btn-color: #25a9ad;
+ $btn-hover-color: darken(#25a9ad, 10%);
  button {
      background-color: $btn-color;
      color: #fff;
@@ -125,9 +124,9 @@ $btn-hover-color: darken(#25a9ad, 10%);
          background-color: $btn-hover-color;
          top: 2px;
      }
-     
-     &#start, &#restart {
-           padding: 1.2rem;
+     &#start,
+     &#restart {
+         padding: 1.2rem;
      }
  }
  /* give retry and back to start icons right margin */
@@ -136,11 +135,12 @@ $btn-hover-color: darken(#25a9ad, 10%);
  .icon-left {
      margin-right: 0.2em;
  }
-
-.icon-right, .icon-left {
-      position: relative;
-}
-
+ 
+ .icon-right,
+ .icon-left {
+     position: relative;
+ }
+ 
  ul {
      margin: 0;
      padding: 0;
@@ -149,21 +149,19 @@ $btn-hover-color: darken(#25a9ad, 10%);
  
  li {
      list-style-position: inside;
-    
-     /*
      &:before {
-         content: '0xe803';
+         content: '\e803';
          font-family: 'fontello';
          display: inline-block;
-         margin-left: -1.3em;
-         width: 1.3em;
-     }*/
+         margin-right: 0.5em;
+         margin-left: 2rem;
+     }
  }
-
-.icon-cancel {
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-}
+ 
+ .icon-cancel {
+     font-size: 1.5rem;
+     margin-right: 0.5rem;
+ }
  
  @media (min-width: 480px) {
      body,
@@ -172,7 +170,6 @@ $btn-hover-color: darken(#25a9ad, 10%);
      }
      button {
          display: inline-block;
-        
      }
      input[type=text],
      input[type=email] {
@@ -188,7 +185,6 @@ $btn-hover-color: darken(#25a9ad, 10%);
      .last {
          margin-top: 2rem;
      }
-   
  }
  
  @media (min-width: 690px) {
@@ -200,10 +196,11 @@ $btn-hover-color: darken(#25a9ad, 10%);
          display: flex;
          justify-content: space-between;
      }
-       .message-container, .btn-container {
+     .message-container,
+     .btn-container {
          margin-top: 0;
      }
      button {
-          margin-left: 1rem;
+         margin-left: 1rem;
      }
  }

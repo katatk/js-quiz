@@ -85,19 +85,19 @@ function validateInput() {
 
     // validate full name
     if (strFullName == "") {
-        errorMessage += "<li><i class='icon-cancel'></i>Please enter a name</li>";
+        errorMessage += "<li>Please enter a name</li>";
 
-    } else if (!/^[a-zA-Z]+\s[a-zA-Z]+$/.test(strFullName)) {
-        errorMessage += "<li><i class='icon-cancel'></i>" + strFullName + " is NOT a valid first and last name</li>";
+    } else if (!/^[a-zA-Z]{2}\s[a-zA-Z]{2}$/.test(strFullName)) {
+        errorMessage += "<li>" + strFullName + " is NOT a valid first and last name</li>";
     }
 
     // validate email
     if (strEmail == "") {
-        errorMessage += "<li><i class='icon-cancel'></i>Please enter an email address</li>";
+        errorMessage += "<li>Please enter an email address</li>";
 
 
     } else if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(strEmail)) {
-        errorMessage += "<li><i class='icon-cancel'></i>" + strEmail + " is NOT a valid email address</li>";
+        errorMessage += "<li>" + strEmail + " is NOT a valid email address</li>";
 
     }
 
