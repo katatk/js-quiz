@@ -38,16 +38,15 @@ questionThree = {
         correctAnswer: 4
 },
 questionFour = {
-
-        number: 5,
-        title: "5. Which events are fired when an element is clicked?",
+        number: 4,
+        title: "4. Which events are fired when an element is clicked?",
         answers: ['<code>mousedown</code> and <code>mouseup</code>', '<code>click</code> only', '<code>mousedown</code>, <code>mouseup</code> and <code>click</code>'],
         correctAnswer: 2
 },
 
     questionFive = {
-        number: 4,
-        title: "4. What does this return? <pre><code>Boolean('12' > 10)</code></pre>",
+        number: 5,
+        title: "5. What does this return? <pre><code>Boolean('12' > 10)</code></pre>",
         answers: ['<code>True</code>', '<code>False</code>', '<code>NaN</code>'],
         correctAnswer: 0
 }
