@@ -33,10 +33,26 @@ questionTwo = {
 
 questionThree = {
         number: 3,
-        title: "3. Which statement is not true for <code>var num = 3</code>?",
-        answers: ['num == "3"', 'num === 3', "num != 4", 'num === "3"', 'num == 3'],
-        correctAnswer: 3
-}];
+        title: "3. Which statement is not true for the following? <pre><code>var num = 3</code></pre>",
+        answers: ['num == "3"', 'num === 3', "num == '3'", "num != 4", 'num === "3"', 'num == 3'],
+        correctAnswer: 4
+},
+questionFour = {
+
+        number: 5,
+        title: "5. Which events are fired when an element is clicked?",
+        answers: ['<code>mousedown</code> and <code>mouseup</code>', '<code>click</code> only', '<code>mousedown</code>, <code>mouseup</code> and <code>click</code>'],
+        correctAnswer: 2
+},
+
+    questionFive = {
+        number: 4,
+        title: "4. What does this return? <pre><code>Boolean('12' > 10)</code></pre>",
+        answers: ['<code>True</code>', '<code>False</code>', '<code>NaN</code>'],
+        correctAnswer: 0
+}
+
+];
 
 
 output = "";
@@ -87,7 +103,7 @@ function validateInput() {
     if (strFullName == "") {
         errorMessage += "<li>Please enter a name</li>";
 
-    } else if (!/^[a-zA-Z]{2}\s[a-zA-Z]{2}$/.test(strFullName)) {
+    } else if (!/^[a-zA-Z]{2,}\s[a-zA-Z]{2,}$/.test(strFullName)) {
         errorMessage += "<li>" + strFullName + " is NOT a valid first and last name</li>";
     }
 
@@ -105,7 +121,7 @@ function validateInput() {
     validationMessage.innerHTML = "<ul>" + errorMessage + "</ul>";
 
     // if both name and email are correct, show div containing the quiz and hide first div 
-    if (strFullName != "" && strFullName.match(/^[a-zA-Z]+\s[a-zA-Z]+$/) && strEmail != "" && /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(strEmail)) {
+    if (strFullName != "" && strFullName.match(/^[a-zA-Z]{2,}\s[a-zA-Z]{2,}$/) && strEmail != "" && /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(strEmail)) {
         divTwo.style.display = 'block';
         divOne.style.display = 'none';
         // print the user's name to the last div
@@ -212,7 +228,7 @@ function restartQuiz() {
     /* hide second div and show third */
     divThree.style.display = 'none';
     divOne.style.display = 'block';
-    
+
     // clear all radio buttons and remove missed questions message
     retryQuiz();
 
