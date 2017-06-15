@@ -19,7 +19,7 @@ btnRestart.addEventListener("click", restartQuiz);
 var questions = [
 questionOne = {
         number: 1,
-        title: "1. Which is the correct way to link a JavaScript file in your HTML?",
+        title: "1. Which is the correct way to link an external JavaScript file in HTML?",
         answers: ['<code>&lt;script href="script.js" type="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;srcipt href="script.js" rel="text/javascript"&gt;</code>', '<code>&lt;script src="script.js" type="text/javascript"&gt;</code>'],
         correctAnswer: 3
 },
