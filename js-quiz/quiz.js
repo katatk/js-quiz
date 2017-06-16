@@ -66,7 +66,7 @@ for (x in questions) {
     output += "<legend class='question-heading'>" + questions[x].title + "</legend>";
 
     for (var j = 0; j < questions[x].answers.length; j++) {
-        output += "<div>";
+        output += "<div class='questions'>";
         output += "<input type='radio' name='q" + questions[x].number + "'>";
         output += "<label>" + questions[x].answers[j] + "</label>";
         output += "</div>";
