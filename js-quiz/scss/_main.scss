@@ -181,10 +181,12 @@ button {
 }
 
 @media (min-width: 768px) {
-    button,
-    #start,
-    #restart {
+    button {
         padding: 1.2rem;
+        &#start,
+        &#restart {
+            padding: 1.2rem;
+        }
     }
 }
 
