@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'unica_oneregular';
+    src: url('../font/unicaone-regular-webfont.woff2') format('woff2'), url('../font/unicaone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'varela_roundregular';
+    src: url('../font/varelaround-regular-webfont.woff2') format('woff2'), url('../font/varelaround-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.4rem;
+    font-family: 'varela_roundregular', sans-serif;
+    color: #444;
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    padding: 4rem 2rem;
+}
+
+@media (min-width: 480px) {
+    body {
+        padding: 4rem 4rem;
+    }
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font: 4rem/1 'unica_oneregular', cursive;
+    margin-bottom: 0;
+}
+
+@media (min-width: 360px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+}
+
+@media (min-width: 480px) {
+    h1 {
+        font-size: 6rem;
+    }
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+}
+
+#questions-container {
+    text-align: left;
+}
+
+.inner {
+    padding: 2rem;
+    background-color: #ECF0F1;
+    margin-top: 2rem;
+    border: 1px solid #C1C2C4;
+    border-radius: 5px;
+}
+
+
+/* hide the second and third divs initially */
+
+#two,
+#three {
+    display: none;
+}
+
+.question-heading {
+    display: block;
+    border-bottom: 1px solid #C1C2C4;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.questions {
+    margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+    .questions {
+        margin-bottom: 0.2em;
+    }
+}
+
+input[type=text] {
+    margin: 1rem auto 2rem;
+    padding: 1rem;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+    font-family: 'Varela round', sans-serif;
+    border-radius: 5px;
+    border: 1px solid #C1C2C4;
+}
+
+input[type=email] {
+    @extend input[type=text];
+    margin-bottom: 0;
+}
+
+ ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #b9b9b9;
+}
+
+ ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #b9b9b9;
+}
+
+ :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #b9b9b9;
+}
+
+ :-moz-placeholder {
+    /* Firefox 18- */
+    color: #b9b9b9;
+}
+
+.btn-container {
+    margin-top: 2rem;
+}
+
+.last {
+    margin-top: 0;
+}
+
+.message-container {
+    margin-top: 2rem;
+    color: #fff;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+$btn-color: #25a9ad;
+$btn-hover-color: darken(#25a9ad,
+10%);
+button {
+    background-color: $btn-color;
+    color: #fff;
+    border: 0;
+    padding: 1.6rem;
+    margin: 0 auto 1rem;
+    display: block;
+    flex-grow: 0;
+    font-size: 1.4rem;
+    font-family: 'Varela round', sans-serif;
+    border-radius: 5px;
+    position: relative;
+    &:hover {
+        cursor: pointer;
+        background-color: $btn-hover-color;
+        top: 2px;
+    }
+    &#start,
+    &#restart {
+        padding: 1.6rem;
+    }
+}
+
+@media (min-width: 768px) {
+    button {
+        padding: 1.2rem;
+        &#start,
+        &#restart {
+            padding: 1.2rem;
+        }
+    }
+}
+
+
+/* give retry and back to start icons right margin */
+
+.icon-cw,
+.icon-left {
+    margin-right: 0.2em;
+}
+
+.icon-right,
+.icon-left {
+    position: relative;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    list-style-position: inside;
+    &:before {
+        content: '\e803';
+        font-family: 'fontello';
+        display: inline-block;
+        margin-right: 0.5em;
+        margin-left: 2rem;
+    }
+}
+
+.icon-cancel {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+@media (min-width: 480px) {
+    body,
+    button {
+        font-size: 1.6rem;
+    }
+    button {
+        display: inline-block;
+    }
+    input[type=text],
+    input[type=email] {
+        margin-left: 0;
+    }
+    .container,
+    h1,
+    input[type=text],
+    input[type=email],
+    .message-container {
+        text-align: left;
+    }
+    .last {
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 690px) {
+    .message-container {
+        display: inline-block;
+        max-width: 50%;
+    }
+    .last {
+        display: flex;
+        justify-content: space-between;
+    }
+    .message-container,
+    .btn-container {
+        margin-top: 0;
+    }
+    button {
+        margin-left: 1rem;
+    }
+}

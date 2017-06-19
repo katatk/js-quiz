@@ -1,0 +1,91 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Reserve Game</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="row">
+            <div class="large-10 columns">
+                <a href="/wildlife-reserve/"><h1 class="heading">Wildlife Reserve Game</h1></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-10 columns">
+                <div class="container">
+                    <!-- New bait message -->
+                    <div class="first">
+                        <p>To get started, throw out some bait to attract a wild animal. Select type of bait to use:</p>
+                        <div class="buttons">
+                        </div>
+                    </div>
+                    <!---->
+                    <!-- New wait message -->
+                    <div class="second">
+                        <p>You put bait out. Now there's nothing left to do but wait...</p>
+                        <a class="button">Wait</a>
+                        <br/>
+                    </div>
+                    <!---->
+                    <!-- New animal message -->
+                    <div class="third">
+                        <p>A wild <span class="new-animal">[]</span> appeared! What do you do?</p>
+                        <a class="button one">Catch it!</a><a class="button two">Let it go</a>
+                        <br/>
+                        <div class="new-animal-img"></div>
+                    </div>
+                    <!---->
+                    <!-- New let it go message -->
+                    <div class="fourth">
+                        <p>You caught the <span class="new-animal">[]</span>! Want to catch another animal?</p>
+                        <a class="button">Yes</a>
+                        <br/>
+                    </div>
+                    <!---->
+                    <!-- New catch message -->
+                    <div class="fifth">
+                        <p>You let the <span class="new-animal">[]</span> get away. Want to try again?</p>
+                        <a class="button">Yes</a>
+                        <br/>
+                    </div>
+                    <!---->
+                    <!-- Too many message -->
+                    <div class="sixth">
+                        <p>Whoa, things are looking a bit crowded! You have to let an animal go before you can catch another.</p>
+                    </div>
+                    <!---->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-10 columns">
+                <div class="container last-container">
+                    <h2 class="heading">Caught Animals</h2>
+                    <p>You currently have <span class="user-total">0</span> out of <span class="maximum">0</span> animals and <span class="species">0</span> out of <span class="species-total">0</span> species.</p>
+                    <div class="animals-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer role="contentinfo" class="footer">
+            <div class="row">
+                <div class="large-12 columns">
+                    <a href='http://www.freepik.com/free-vector/jungle-animals-set_719884.htm'>Animal icons</a> &amp; <a href='http://www.freepik.com/free-vector/colorful-food-icons_807950.htm'> bait icons</a> designed by Freepik
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/animal-app.js"></script>
+</body>
+
+</html>

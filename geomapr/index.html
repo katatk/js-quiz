@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GeoMapr</title>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 14px;
+            min-height: 100vh;
+            height: 100%;
+        }
+        
+        @media (min-width: 768px) {
+            html {
+                font-size: 16px;
+            }
+        }
+        
+        *,
+        *:before,
+         :after {
+            box-sizing: inherit;
+        }
+        
+        header {
+            border-bottom: 1px solid #262626;
+            padding: 1rem;
+        }
+        
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+          min-height: 100%;
+        }
+        
+        
+        .container {
+            width: 30%;
+            display: inline-block;
+            padding: 2rem;
+        }
+        
+        #map-container {
+            max-width: 1024px;
+            width: 70%;
+            display: inline-block;
+          /*  height: 100vh;*/
+        }
+        
+        input {
+            display: inline-block;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+        }
+        
+        input[type=text] {
+            width: 85%;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        #search {
+            background-color: #76c993;
+            border: 1px solid #76c993;
+            color: #fff;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        #search:hover {
+            cursor: pointer;
+        }
+        
+        #map {
+            height: 100%;
+            width: 100%;
+            border: 0;
+        }
+        
+        .center {
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        #details-container {
+            text-align: center;
+        }
+        
+        h4 {
+            margin-bottom: 0.5em;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+        <header>
+            <h1>GeoMapr</h1>
+        </header>
+    <main>
+        <div class="container">
+            <h2 class="center">Enter the IP/Address to look up</h2>
+            <form>
+                <input type="text" id="ip-address">
+                <input type="button" value="Search" id="search">
+            </form>
+
+            <hr>
+            <h2>Details</h2>
+            <div id="details-container">
+            </div>
+        </div>
+
+        <div id="map-container">
+            <div id="map"></div>
+            <!-- <iframe frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAPQVGO7x00G1SrIVxr3b8o0UXSZq4fQRI&q=New-Zealand"></iframe>-->
+        </div>
+
+    </main>
+    <script src="script.js" type="text/javascript"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPQVGO7x00G1SrIVxr3b8o0UXSZq4fQRI&callback=initMap"></script>
+</body>
+
+</html>

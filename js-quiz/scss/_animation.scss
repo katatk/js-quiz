@@ -1,0 +1,87 @@
+/*
+   Spinning animation
+*/
+
+.animate-spin:hover .icon-cw {
+    -webkit-animation: spin 0.5s linear;
+    animation: spin 0.5s linear;
+    display: inline-block;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+
+/*
+   Move right
+*/
+
+.animate-right-arrow:hover .icon-right {
+    -webkit-animation: moveright 0.1s linear forwards;
+    animation: moveright 0.1s linear forwards;
+}
+
+@-webkit-keyframes moveright {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 5px;
+    }
+}
+
+@keyframes moveright {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 5px;
+    }
+}
+
+/*
+   Move left
+*/
+
+
+.animate-left-arrow:hover .icon-left {
+    -webkit-animation: moveleft 0.1s linear forwards;
+    animation: moveleft 0.1s linear forwards;
+}
+
+@-webkit-keyframes moveleft {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: 5px;
+    }
+}
+
+@keyframes moveleft {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: 5px;
+    }
+}
