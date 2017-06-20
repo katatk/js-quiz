@@ -158,15 +158,18 @@ function getValues(xhttp) {
 // map pins array, will get added to everytime an ip lookup is performed
 var locations = [];
 
+// markers array
+var markers = [];
+
 // build markers function
 // loops through locations array and retruns a new marker for each location object in the array
 function addMarkers() {
-    for (i = 0; i < locations.length; i++) {
-        new google.maps.Marker({
-            position: locations[i],
+        var marker = new google.maps.Marker({
+            position: locations[locations.length-1],
             map: map
-
         });
+        
+        markers.push(marker);
 
         // if the user has done a search and locations array is bigger than one then zoom out
         if (locations.length > 1) {
@@ -181,10 +184,7 @@ function addMarkers() {
         } else {
             map.setCenter(locations[0]);
         }
-    }
 }
-
-
 
 // clear the map function
 
@@ -194,9 +194,10 @@ function clearMap() {
     // set locations to an empty array
     locations = [];
 
-    for (i = 0; i < locations.length; i++) {
-        locations[i].setMap(null);
+    // loop through markers array and remove from map
+    for (i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
     }
-    // run add markers function
-    addMarkers();
+    // set markers to an empty array
+    markers = [];
 }

@@ -47,14 +47,20 @@ h1 {
     margin-bottom: 0.5em;
 }
 
+p:first-of-type {
+    margin-bottom: 2rem;
+}
+
 ul {
     list-style: none;
     padding-left: 0;
+    text-align: center;
+    margin-top: 2rem;
 }
 
 li {
     display: inline-block;
-    margin: 2rem 1rem;
+    margin: 0 1rem 2rem;
 }
 
 a {
@@ -70,6 +76,7 @@ img {
     top: 0;
     width: 200px;
     height: auto;
+    margin: 0 auto;
     -webkit-transition: top 0.5s;
     transition: top 0.5s;
     &:hover {
