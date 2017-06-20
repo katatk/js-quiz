@@ -149,7 +149,7 @@ function getValues(xhttp) {
 
 
     // run new markers function
-    addMarkers(locations);
+    addMarkers();
 
     // output the results to the page
     buildHTML();
@@ -160,27 +160,43 @@ var locations = [];
 
 // build markers function
 // loops through locations array and retruns a new marker for each location object in the array
-function addMarkers(arrMarkers) {
-    for (i = 0; i < arrMarkers.length; i++) {
+function addMarkers() {
+    for (i = 0; i < locations.length; i++) {
         new google.maps.Marker({
-            position: arrMarkers[i],
+            position: locations[i],
             map: map
 
         });
-    }
 
-    // if the user has done a search and locations array is bigger than one then zoom out
-    if (locations.length > 1) {
-        map.setZoom(2);
-    }
+        // if the user has done a search and locations array is bigger than one then zoom out
+        if (locations.length > 1) {
+            map.setZoom(2);
+        }
 
-    if (locations.length > 1) {
-        map.setCenter({
-            lat: 0,
-            lng: 0
-        });
+        if (locations.length > 1) {
+            map.setCenter({
+                lat: 0,
+                lng: 0
+            });
+        } else {
+            map.setCenter(locations[0]);
+        }
     }
-    else {
-        map.setCenter(locations[0]);
+}
+
+
+
+// clear the map function
+
+document.getElementById("clear-map").addEventListener('mousedown', clearMap);
+
+function clearMap() {
+    // set locations to an empty array
+    locations = [];
+
+    for (i = 0; i < locations.length; i++) {
+        locations[i].setMap(null);
     }
+    // run add markers function
+    addMarkers();
 }
