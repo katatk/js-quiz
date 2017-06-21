@@ -10,110 +10,11 @@
 
     <title>GeoMapr</title>
 
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-size: 14px;
-            min-height: 100vh;
-            height: 100%;
-        }
-        
-        @media (min-width: 768px) {
-            html {
-                font-size: 16px;
-            }
-        }
-        
-        *,
-        *:before,
-         :after {
-            box-sizing: inherit;
-        }
-        
-        header {
-            border-bottom: 1px solid #262626;
-            padding: 1rem;
-        }
-        
-        main {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-            min-height: 100%;
-        }
-        
-        .container {
-            width: 30%;
-            display: inline-block;
-            padding: 2rem;
-        }
-        
-        #map-container {
-            max-width: 1024px;
-            width: 70%;
-            display: inline-block;
-            /*  height: 100vh;*/
-        }
-        
-        input {
-            display: inline-block;
-            margin: 0 auto;
-            margin-bottom: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            input,
-            hr {
-                margin-bottom: 1rem;
-            }
-        }
-        
-        input[type=text] {
-            width: 85%;
-            padding: 0.5rem;
-            font-size: 1rem;
-        }
-        
-        #search {
-            background-color: #76c993;
-            border: 1px solid #76c993;
-            color: #fff;
-            padding: 0.5rem;
-            font-size: 1rem;
-            width: 12%;
-        }
-        
-        #search:hover {
-            cursor: pointer;
-        }
-        
-        #map {
-            height: 100%;
-            width: 100%;
-            border: 0;
-        }
-        
-        .center {
-            text-align: center;
-            font-size: 1rem;
-        }
-        
-        #details-container {
-            text-align: center;
-        }
-        
-        h1 {
-            margin: 0;
-        }
-        
-        h4 {
-            margin-bottom: 0.5em;
-        }
-
-    </style>
+    <link href="css/style.css" rel='stylesheet'>
+ <!--   <link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />-->
+    <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+      <!--<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>-->
 </head>
 
 <body>
@@ -129,6 +30,7 @@
                 <input type="button" value="Search" id="search">
             </form>
             <span>Want to <a href='#' id="clear-map">clear the map?</a></span>
+            <button id="change-map">Load Google Maps</button>
 
             <hr>
             <h2>Details</h2>
@@ -138,16 +40,21 @@
 
         <div id="map-container">
             <div id="map"></div>
-            <!-- <iframe frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAPQVGO7x00G1SrIVxr3b8o0UXSZq4fQRI&q=New-Zealand"></iframe>-->
         </div>
 
     </main>
-    <script src="script.js" type="text/javascript"></script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 
 
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPQVGO7x00G1SrIVxr3b8o0UXSZq4fQRI&callback=initMap"></script>
+
+
+
+
+    <!--  <script src="js/markerclusterer.js"></script>-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPQVGO7x00G1SrIVxr3b8o0UXSZq4fQRI"></script>
+    <!--&callback=initMap-->
+    <script src="js/script.js" type="text/javascript"></script>
+
+
 </body>
 
 </html>

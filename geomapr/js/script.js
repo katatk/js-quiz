@@ -1,15 +1,61 @@
 // code for gmaps API
 var map;
 
+// create google map
 function initMap() {
     // set intial zoom to zoomed in
     var mapOptions = {
-        zoom: 6
+        zoom: 2,
+        center: {
+            lat: 0,
+            lng: 0
+        }
     }
 
     // initial position for map
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
 }
+
+// create mapbox
+function createMapbox() {
+  /*  mapboxgl.accessToken = 'pk.eyJ1Ijoia2F0YWsiLCJhIjoiY2o0Njc0ZGJuMHByNDMybzJnc2Z4NWVsaSJ9.UiTN4aKH6VFzKyGTBQBvCw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 1
+    });
+    
+    mapboxgl.marker([38.913184, -77.031952]).addTo(map);*/
+    
+    // Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+
+    L.mapbox.accessToken = 'pk.eyJ1Ijoia2F0YWsiLCJhIjoiY2o0Njc0ZGJuMHByNDMybzJnc2Z4NWVsaSJ9.UiTN4aKH6VFzKyGTBQBvCw';
+    var mapLeaflet = L.mapbox.map('map', 'mapbox.light')
+        .setView([37.8, -96], 4);
+
+    L.marker([38.913184, -77.031952]).addTo(mapLeaflet);
+    L.marker([37.775408, -122.413682]).addTo(mapLeaflet);
+
+    mapLeaflet.scrollWheelZoom.disable();
+}
+
+createMapbox();
+
+// toggle mapbox
+document.getElementById("change-map").addEventListener("click", function () {
+    // if google map already showing
+    if (this.innerHTML == "Load Mapbox") {
+        this.innerHTML = "Load Google Maps";
+        createMapbox();
+
+        // if map box already showing
+    } else {
+        this.innerHTML = "Load Mapbox";
+        initMap();
+    }
+
+});
 
 // location object
 var ipLocation = {
@@ -92,7 +138,7 @@ function search() {
 }
 
 // get vistor's IP right away 
-window.onload = search();
+/*window.onload = search();*/
 
 // search when enter is pressed
 inputField.onkeydown = function (e) {
@@ -106,6 +152,13 @@ var searchBtn = document.getElementById("search");
 
 // search when button is clicked
 searchBtn.addEventListener('click', search);
+
+
+/*function createClusters() {
+    markerCluster = new MarkerClusterer(map, markers, {
+        imagePath: '../img/cluster/m'
+    });
+}*/
 
 
 /* =========
@@ -127,7 +180,6 @@ function loadDoc(url, cFunction) {
 // callback function
 function getValues(xhttp) {
     var data = JSON.parse(xhttp.responseText);
-    console.log(data);
     var output = "";
 
     // replace current location object with values from data object
@@ -147,13 +199,16 @@ function getValues(xhttp) {
         lng: data.longitude
     });
 
-
     // run new markers function
     addMarkers();
+
+    //run marker cluster function
+    /* createClusters();*/
 
     // output the results to the page
     buildHTML();
 }
+
 
 // map pins array, will get added to everytime an ip lookup is performed
 var locations = [];
@@ -161,30 +216,54 @@ var locations = [];
 // markers array
 var markers = [];
 
+var markerCluster;
+
 // build markers function
 // loops through locations array and retruns a new marker for each location object in the array
 function addMarkers() {
-        var marker = new google.maps.Marker({
-            position: locations[locations.length-1],
-            map: map
+    var marker = new google.maps.Marker({
+        position: locations[locations.length - 1],
+        map: map
+    });
+
+    var contentString = inputField.value;
+
+    if (contentString == "") {
+        contentString = ipLocation["IP Address"];
+    }
+    // add an info window to the marker
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+
+    marker.addListener('click', function () {
+        infowindow.open(map, marker);
+    });
+
+    // push new marker to array
+    markers.push(marker);
+
+    // if the user has done a search and locations array is bigger than one then zoom out
+    if (locations.length > 1) {
+        map.setZoom(2);
+    }
+
+    if (locations.length > 1) {
+        map.setCenter({
+            lat: 0,
+            lng: 0
         });
-        
-        markers.push(marker);
+    } else {
+        map.setCenter(locations[0]);
+    }
 
-        // if the user has done a search and locations array is bigger than one then zoom out
-        if (locations.length > 1) {
-            map.setZoom(2);
-        }
+    // add a cluster
+    /* markerCluster = new MarkerClusterer(map, markers, {
+         imagePath: '../img/cluster/m'
+     });*/
 
-        if (locations.length > 1) {
-            map.setCenter({
-                lat: 0,
-                lng: 0
-            });
-        } else {
-            map.setCenter(locations[0]);
-        }
 }
+
 
 // clear the map function
 
@@ -201,3 +280,10 @@ function clearMap() {
     // set markers to an empty array
     markers = [];
 }
+
+
+/* ==========
+Mapbox
+============= */
+
+
