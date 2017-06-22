@@ -300,6 +300,7 @@ document.getElementById("change-map").addEventListener("click", function () {
         this.innerHTML = "Switch to Mapbox";
         gmapContainer.style.display = "block";
         mapboxContainer.style.display = "none";
+
         isGmap = true;
         isMapbox = false;
         toggleBtn.className = "mapbox-btn btn";
