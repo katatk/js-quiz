@@ -1,5 +1,5 @@
-// code for gmaps API
-var map;
+// init gmap
+var gmap;
 
 // create google map
 function initMap() {
@@ -13,46 +13,53 @@ function initMap() {
     }
 
     // initial position for map
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    gmap = new google.maps.Map(document.getElementById('gmap'), mapOptions);
 }
 
-// create mapbox
+
+// init mapbox
+
+var mapLeafet;
+
 function createMapbox() {
-  /*  mapboxgl.accessToken = 'pk.eyJ1Ijoia2F0YWsiLCJhIjoiY2o0Njc0ZGJuMHByNDMybzJnc2Z4NWVsaSJ9.UiTN4aKH6VFzKyGTBQBvCw';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 1
-    });
-    
-    mapboxgl.marker([38.913184, -77.031952]).addTo(map);*/
-    
-    // Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
 
     L.mapbox.accessToken = 'pk.eyJ1Ijoia2F0YWsiLCJhIjoiY2o0Njc0ZGJuMHByNDMybzJnc2Z4NWVsaSJ9.UiTN4aKH6VFzKyGTBQBvCw';
-    var mapLeaflet = L.mapbox.map('map', 'mapbox.light')
-        .setView([37.8, -96], 4);
+
+    mapLeaflet = L.mapbox.map('mapbox', 'mapbox.light').setView([37.8, -96], 4);
 
     L.marker([38.913184, -77.031952]).addTo(mapLeaflet);
-    L.marker([37.775408, -122.413682]).addTo(mapLeaflet);
 
     mapLeaflet.scrollWheelZoom.disable();
 }
 
 createMapbox();
 
+
+// map functions
+
+// mapbox functions
+
+function addMarkerLeaflet(lat, lng) {
+    L.marker([lat, lng]).addTo(mapLeaflet);
+}
+
 // toggle mapbox
 document.getElementById("change-map").addEventListener("click", function () {
-    // if google map already showing
+    // get containing divs for maps
+    var gmapContainer = document.getElementById("gmap");
+    var mapboxContainer = document.getElementById("mapbox");
+
+    // if google map already showing, load mapbox and update button to gmaps
     if (this.innerHTML == "Load Mapbox") {
         this.innerHTML = "Load Google Maps";
-        createMapbox();
+        gmapContainer.style.display = "none";
+        mapboxContainer.style.display = "block";
 
-        // if map box already showing
+        // if map box already showing, load gmaps and update button to mapbox
     } else {
         this.innerHTML = "Load Mapbox";
-        initMap();
+        gmapContainer.style.display = "block";
+        mapboxContainer.style.display = "none";
     }
 
 });
@@ -199,8 +206,11 @@ function getValues(xhttp) {
         lng: data.longitude
     });
 
-    // run new markers function
+    // run new markers function (gmaps)
     addMarkers();
+
+    // add markers (mapbox)
+    addMarkerLeaflet(data.latitude, data.longitude);
 
     //run marker cluster function
     /* createClusters();*/
@@ -223,7 +233,7 @@ var markerCluster;
 function addMarkers() {
     var marker = new google.maps.Marker({
         position: locations[locations.length - 1],
-        map: map
+        map: gmap
     });
 
     var contentString = inputField.value;
@@ -237,7 +247,7 @@ function addMarkers() {
     });
 
     marker.addListener('click', function () {
-        infowindow.open(map, marker);
+        infowindow.open(gmap, marker);
     });
 
     // push new marker to array
@@ -245,16 +255,16 @@ function addMarkers() {
 
     // if the user has done a search and locations array is bigger than one then zoom out
     if (locations.length > 1) {
-        map.setZoom(2);
+        gmap.setZoom(2);
     }
 
     if (locations.length > 1) {
-        map.setCenter({
+        gmap.setCenter({
             lat: 0,
             lng: 0
         });
     } else {
-        map.setCenter(locations[0]);
+        gmap.setCenter(locations[0]);
     }
 
     // add a cluster
@@ -285,5 +295,3 @@ function clearMap() {
 /* ==========
 Mapbox
 ============= */
-
-
