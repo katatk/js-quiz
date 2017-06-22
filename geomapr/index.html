@@ -19,22 +19,25 @@
 
 <body>
 
-    <header>
+    <header role="contentinfo">
         <h1>GeoMapr</h1>
     </header>
     <main>
         <div class="container">
-            <h2 class="center">Enter the IP/Address to look up</h2>
-            <form>
-                <input type="text" id="ip-address">
-                <input type="submit" value="Search" id="search">
-            </form>
-            <span>Want to <a href='#' id="clear-map">clear the map?</a></span>
-            <button id="change-map">Load Google Maps</button>
+            <div class="inner">
+                <h2 class="center">Enter the IP/Address to look up</h2>
+                <form>
+                    <input type="text" id="ip-address">
+                    <input type="submit" value="Search" id="search">
+                </form>
+                <div class="clear-map-container">
+                <span class="clear-map">Want to <a href='#' id="clear-map">clear the map?</a></span>
+                <button id="change-map">Load Google Maps</button>
+                </div>
 
-            <hr>
-            <h2>Details</h2>
-            <div id="details-container">
+                <h2>Details</h2>
+                <div id="details-container">
+                </div>
             </div>
         </div>
 

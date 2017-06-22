@@ -1,101 +1,130 @@
  html,
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-size: 14px;
-            min-height: 100vh;
-            height: 100%;
-        }
-        
-        @media (min-width: 768px) {
-            html {
-                font-size: 16px;
-            }
-        }
-        
-        *,
-        *:before,
-         :after {
-            box-sizing: inherit;
-        }
-        
-        header {
-            border-bottom: 1px solid #262626;
-            padding: 1rem;
-        }
-        
-        main {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-            min-height: 100%;
-        }
-        
-        .container {
-            width: 30%;
-            display: inline-block;
-            padding: 2rem;
-        }
-        
-        #map-container {
-            max-width: 1024px;
-            width: 70%;
-            display: inline-block;
-            /*  height: 100vh;*/
-        }
-        
-        input {
-            display: inline-block;
-            margin: 0 auto;
-            margin-bottom: 1rem;
-            max-width: 70%;
-        }
-        
-        @media (min-width: 768px) {
-            input,
-            hr {
-                margin-bottom: 1rem;
-            }
-        }
-        
-        input[type=text] {
-            width: 85%;
-            padding: 0.5rem;
-            font-size: 1rem;
-        }
-        
-        #search, #change-map {
-            background-color: #76c993;
-            border: 1px solid #76c993;
-            color: #fff;
-            padding: 0.5rem;
-            font-size: 1rem;
-        }
-        
-        #search:hover {
-            cursor: pointer;
-        }
-        
-        .map {
-            height: 100%;
-            width: 100%;
-            border: 0;
-        }
-        
-        .center {
-            text-align: center;
-            font-size: 1rem;
-        }
-        
-        #details-container {
-            text-align: center;
-        }
-        
-        h1 {
-            margin: 0;
-        }
-        
-        h4 {
-            margin-bottom: 0.5em;
-        }
+ body {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-size: 14px;
+     min-height: 100vh;
+     height: 100%;
+ }
+ 
+ @media (min-width: 768px) {
+     html {
+         font-size: 16px;
+     }
+ }
+ 
+ *,
+ *:before,
+ :after {
+     box-sizing: inherit;
+ }
+ 
+ header {
+     border-bottom: 1px solid #ccc;
+     padding: 1rem;
+ }
+ 
+ main {
+     display: flex;
+     justify-content: space-between;
+     align-items: stretch;
+     min-height: 100%;
+ }
+ 
+ .container {
+     display: inline-block;
+     padding: 2rem;
+     text-align: center;
+     display: flex;
+     flex: 1;
+ }
+ 
+ .inner {
+     margin: 0 auto;
+     min-width: 70%;
+ }
+ 
+ #map-container {
+     max-width: 1024px;
+     width: 70%;
+     display: inline-block;
+     /*  height: 100vh;*/
+ }
+ 
+ form {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-end;
+ }
+ 
+ input {
+     display: inline-block;
+     margin: 0 auto;
+     margin-bottom: 1rem;
+   
+ }
+ 
+ @media (min-width: 768px) {
+     input,
+     hr {
+         margin-bottom: 1rem;
+     }
+ }
+ 
+ input[type=text] {
+     flex: 5;
+     padding: 0.5rem;
+     font-size: 1rem;
+     margin-right: 1rem;
+     border: 1px solid #ccc;
+ }
+
+input[type=submit] {
+     /*flex: 1;*/
+}
+ 
+ #search,
+ #change-map {
+     background-color: #76c993;
+     border: 1px solid #76c993;
+     color: #fff;
+     padding: 0.5rem;
+     font-size: 1rem;
+ }
+ 
+ #search:hover {
+     cursor: pointer;
+ }
+ 
+ .map {
+     height: 100%;
+     width: 100%;
+     border: 0;
+ }
+
+#gmap {
+    display: none;
+}
+ 
+ .center {
+     text-align: center;
+     font-size: 1rem;
+ }
+ 
+ #details-container {
+     text-align: center;
+ }
+ 
+ h1 {
+     margin: 0;
+ }
+ 
+ .clear-map-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-end;
+     padding-bottom: 1rem;
+     border-bottom: 1px solid #ccc;
+     margin-bottom: 2rem;
+ }
