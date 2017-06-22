@@ -181,18 +181,18 @@ function addMarkers() {
     gmarkers.push(marker);
 
     // if the user has done a search and locations array is bigger than one then zoom out
-    if (locations.length > 1) {
-        gmap.setZoom(2);
-    }
+    /* if (locations.length > 1) {
+         gmap.setZoom(2);
+     }
 
-    if (locations.length > 1) {
-        gmap.setCenter({
-            lat: 0,
-            lng: 0
-        });
-    } else {
-        gmap.setCenter(locations[0]);
-    }
+     if (locations.length > 1) {
+         gmap.setCenter({
+             lat: 0,
+             lng: 0
+         });
+     } else {
+         gmap.setCenter(locations[0]);
+     }*/
 
     // add a cluster
     /* markerCluster = new MarkerClusterer(map, markers, {
@@ -200,15 +200,11 @@ function addMarkers() {
      });*/
 }
 
-// mapboc add markers function
+// mapbox add markers function
 function addMarkerLeaflet(lat, lng) {
     var newMarker = L.marker([lat, lng]).addTo(mapLeaflet);
     mbmarkers.push(newMarker);
 }
-
-// mapbox builder markers function
-
-
 
 // clear the map function
 
@@ -268,7 +264,6 @@ function createMapbox() {
 
 // create mapbox on page load + add marker for user location straight away
 window.addEventListener("load", function () {
-    initMap();
     createMapbox();
 
     search();
@@ -277,9 +272,10 @@ window.addEventListener("load", function () {
 
 
 // toggle between maps, starting with mapbox on and gmaps off
-
 var isGmap = false;
 var isMapbox = true;
+
+var gmapCreated = false;
 
 document.getElementById("change-map").addEventListener("click", function () {
     // get containing divs for maps
@@ -300,12 +296,19 @@ document.getElementById("change-map").addEventListener("click", function () {
 
         // if map box already showing, load gmaps and update button to mapbox
     } else {
+
         this.innerHTML = "Switch to Mapbox";
         gmapContainer.style.display = "block";
         mapboxContainer.style.display = "none";
         isGmap = true;
         isMapbox = false;
         toggleBtn.className = "mapbox-btn btn";
+
+        if (gmapCreated === false) {
+            initMap();
+            gmapCreated = true;
+        }
+
     }
 
 });
