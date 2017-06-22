@@ -268,7 +268,9 @@ function createMapbox() {
 
 // create mapbox on page load + add marker for user location straight away
 window.addEventListener("load", function () {
+    initMap();
     createMapbox();
+
     search();
 });
 
