@@ -1,5 +1,3 @@
-
-
 // location object
 var ipLocation = {
     "IP Address": null,
@@ -153,28 +151,23 @@ function getValues(xhttp) {
     buildHTML();
 }
 
-
-// map pins array, will get added to everytime an ip lookup is performed
+// locations array containing co-ordinates, will get added to everytime an ip lookup is performed
 var locations = [];
 
-// markers array
-var markers = [];
+// markers array for gmaps
+var gmarkers = [];
+
+// markers array for mapbox
+var mbmarkers = [];
 
 var markerCluster;
 
-// build markers function
+// gmap build markers function
 // loops through locations array and retruns a new marker for each location object in the array
 function addMarkers() {
 
-    /* var positionObj = {
-        lat: locations[locations.length - 1][0],
-        lng: locations[locations.length - 1][1]
-    };
-*/
     var marker = new google.maps.Marker({
-        position: locations[locations.length - 1]
-            /*  position: positionObj*/
-            ,
+        position: locations[locations.length - 1],
         map: gmap
     });
 
@@ -193,7 +186,7 @@ function addMarkers() {
     });
 
     // push new marker to array
-    markers.push(marker);
+    gmarkers.push(marker);
 
     // if the user has done a search and locations array is bigger than one then zoom out
     if (locations.length > 1) {
@@ -213,8 +206,16 @@ function addMarkers() {
     /* markerCluster = new MarkerClusterer(map, markers, {
          imagePath: '../img/cluster/m'
      });*/
-
 }
+
+// mapboc add markers function
+function addMarkerLeaflet(lat, lng) {
+    var newMarker = L.marker([lat, lng]).addTo(mapLeaflet);
+    mbmarkers.push(newMarker);
+}
+
+// mapbox builder markers function
+
 
 
 // clear the map function
@@ -222,15 +223,28 @@ function addMarkers() {
 document.getElementById("clear-map").addEventListener('mousedown', clearMap);
 
 function clearMap() {
-    // set locations to an empty array
-    locations = [];
 
-    // loop through markers array and remove from map
-    for (i = 0; i < markers.length; i++) {
-        markers[i].setMap(null);
+
+    // gmaps - loop through markers array and remove from map
+    if (isGmap) {
+        for (i = 0; i < gmarkers.length; i++) {
+            gmarkers[i].setMap(null);
+        }
+        // set markers to an empty array
+        gmarkers = [];
     }
-    // set markers to an empty array
-    markers = [];
+
+    // mapbox - clear markers
+    if (isMapbox) {
+        for (var i = 0; i < mbmarkers.length; i++) {
+            mapLeaflet.removeLayer(mbmarkers[i]);
+        }
+
+        mbmarkers = [];
+    }
+
+    // set locations to an empty array
+   /* locations = [];*/
 }
 
 
@@ -255,24 +269,18 @@ function initMap() {
 var mapLeafet;
 
 function createMapbox() {
-
     L.mapbox.accessToken = 'pk.eyJ1Ijoia2F0YWsiLCJhIjoiY2o0Njc0ZGJuMHByNDMybzJnc2Z4NWVsaSJ9.UiTN4aKH6VFzKyGTBQBvCw';
-
     mapLeaflet = L.mapbox.map('mapbox', 'mapbox.light').setView([0, 0], 2);
-
     mapLeaflet.scrollWheelZoom.disable();
 }
 
 // create mapbox on page load + add marker for user location straight away
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     createMapbox();
     search();
 });
 
-// mapboc add markers
-function addMarkerLeaflet(lat, lng) {
-    L.marker([lat, lng]).addTo(mapLeaflet);
-}
+
 
 // toggle between maps, starting with mapbox on and gmaps off
 
@@ -291,7 +299,7 @@ document.getElementById("change-map").addEventListener("click", function () {
         mapboxContainer.style.display = "block";
         isGmap = false;
         isMapbox = true;
-    
+
         // if map box already showing, load gmaps and update button to mapbox
     } else {
         this.innerHTML = "Load Mapbox";
