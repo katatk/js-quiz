@@ -11,10 +11,9 @@
     <title>GeoMapr</title>
 
     <link href="css/style.css" rel='stylesheet'>
-    <!--   <link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />-->
-    <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
-    <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
-    <!--<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>-->
+    <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ranchers" rel="stylesheet">
+
 </head>
 
 <body>
@@ -25,14 +24,14 @@
     <main>
         <div class="container">
             <div class="inner">
-                <h2 class="center">Enter the IP/Address to look up</h2>
+                <h2 class="center">Enter the IP Address/URL to look up</h2>
                 <form>
                     <input type="text" id="ip-address">
-                    <input type="submit" value="Search" id="search">
+                    <input type="submit" value="Search" id="search" class="btn">
                 </form>
                 <div class="clear-map-container">
-                <span class="clear-map">Want to <a href='#' id="clear-map">clear the map?</a></span>
-                <button id="change-map">Load Google Maps</button>
+                    <span class="clear-map">Want to <a href='#' id="clear-map">clear the map</a>?</span> 
+                    <button id="change-map" class="gmaps-btn btn">Switch to Google Maps</button>
                 </div>
 
                 <h2>Details</h2>
@@ -48,6 +47,7 @@
 
     </main>
 
+    <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
     <!--  <script src="js/markerclusterer.js"></script>-->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPQVGO7x00G1SrIVxr3b8o0UXSZq4fQRI&callback=initMap"></script>
     <!--&callback=initMap-->

@@ -18,14 +18,6 @@ function buildHTML() {
     output += "<h4>" + Object.keys(ipLocation)[0] + ":" + "</h4>";
     output += "<span>" + ipLocation["IP Address"] + "</span>";
 
-    output += "<h4>" + Object.keys(ipLocation)[1] + ":" + "</h4>";
-    // only output the domain name if it exists
-    if (ipLocation["Domain"] == null) {
-        output += "<span>Domain name not available</span>";
-    } else {
-        output += "<span>" + ipLocation["Domain"] + "</span>";
-    }
-
     output += "<h4>" + Object.keys(ipLocation)[2] + ":" + "</h4>";
     output += "<span>" + ipLocation["Country Name"] + "</span>";
 
@@ -244,7 +236,7 @@ function clearMap() {
     }
 
     // set locations to an empty array
-   /* locations = [];*/
+    /* locations = [];*/
 }
 
 
@@ -292,21 +284,26 @@ document.getElementById("change-map").addEventListener("click", function () {
     var gmapContainer = document.getElementById("gmap");
     var mapboxContainer = document.getElementById("mapbox");
 
+    // get the toggle btn 
+    var toggleBtn = document.getElementById("change-map");
+
     // if google map already showing, load mapbox and update button to gmaps
-    if (this.innerHTML == "Load Mapbox") {
-        this.innerHTML = "Load Google Maps";
+    if (this.innerHTML == "Switch to Mapbox") {
+        this.innerHTML = "Switch to Google Maps";
         gmapContainer.style.display = "none";
         mapboxContainer.style.display = "block";
         isGmap = false;
         isMapbox = true;
+        toggleBtn.className = "gmaps-btn btn";
 
         // if map box already showing, load gmaps and update button to mapbox
     } else {
-        this.innerHTML = "Load Mapbox";
+        this.innerHTML = "Switch to Mapbox";
         gmapContainer.style.display = "block";
         mapboxContainer.style.display = "none";
         isGmap = true;
         isMapbox = false;
+        toggleBtn.className = "mapbox-btn btn";
     }
 
 });
