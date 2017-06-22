@@ -12,58 +12,75 @@
 </head>
 
 <body>
+    <div class="container">
+        <main role="main">
+            <h1>Hey, thanks for visiting!</h1>
+            <p>I'm currently in the process of creating a shiny new portfolio 😉 In the meantime, check out some of my latest projects. <a class="underline" href="https://github.com/katatk">My GitHub</a></p>
 
-    <main role="main">
-        <h1>Hey, thanks for visiting!</h1>
-        <p>I'm currently in the process of creating a shiny new portfolio (; In the meantime, check out some of my latest projects.</p>
-        
-        <span>Having fun with JavaScript:</span>
-        <ul>
-            
-            <li>
-                <a href="js-quiz/quiz.html">
-                    <div class="hvr-float-shadow"><img src="img/quiz.png"></div>Javascript Quiz</a>
-                <p>5 questions on JavaScript</p>
-            </li>
-            <li>
-                <a href="geomapr/index.html">
-                    <div class="hvr-float-shadow"><img src="img/geomapr.png"></div>GeoMapr</a>
-                 <p>IP/URL lookup using Google Maps API</p>
-            </li>
-              <li>
-                <a href="wildlife-reserve/index.html">
-                    <div class="hvr-float-shadow"><img src="img/wildlife-game.png"></div>Wildlife Game</a>
-                   <p>First jQuery project</p>
-            </li>
-        </ul>
-        
-        <span>Websites:</span>
-          <ul>
-            <li>
-                <a href="http://jsmb.co.nz" target="_blank">
-                    <div class="hvr-float-shadow"><img src="img/jsmb.png"></div>John Macdonald Builders</a>
-                <p>First website for a client</p>
-            </li>
-            <li>
-                <a href="https://adultliteracy.ac.nz" target="_blank">
-                    <div class="hvr-float-shadow"><img src="img/adlit.png"></div>Adult Literacy Rural Trust</a>
-                <p>Wordpress client site</p>
-            </li>
-              <li>
-                <a href="sleek/index.html">
-                    <div class="hvr-float-shadow"><img src="img/sleek.png"></div>Sleek Hair Design</a>
-                  <p>Bootstrap one-page website</p>
-            </li>
-        </ul>
-        
-        
-        <p><a href="https://github.com/katatk">My GitHub</a></p>
-    </main>
+            <span>Having fun with JavaScript:</span>
+
+            <div class="columns">
+                <div class="column col-4 col-sm-12">
+                    <div class="hvr-float-shadow">
+                        <a href="js-quiz/quiz.html"><img src="img/quiz.png"></a>
+                    </div>
+                    <a class="underline" href="js-quiz/quiz.html">Javascript Quiz</a>
+                    <p class="description">Are you a JavaScript ninja? Test your knowledge with 5 quick questions. More to be added soon! </p>
+                </div>
+
+                <div class="column col-4 col-sm-12">
+                    <div class="hvr-float-shadow">
+                        <a href="geomapr/index.html"><img src="img/geomapr.png"></a>
+                    </div>
+                    <a class="underline" href="geomapr/index.html">GeoMapr</a>
+                    <p class="description">IP/URL lookup using Google Maps &amp; Mapbox APIs. Toggle between maps and save locations in each.</p>
+                </div>
+
+                <div class="column col-4 col-sm-12">
+                    <div class="hvr-float-shadow">
+                        <a href="wildlife-reserve/index.html"><img src="img/wildlife-game.png"></a>
+                    </div>
+                    <a class="underline" href="wildlife-reserve/index.html">Wildlife Game</a>
+                    <p class="description">If Zoo Tycoon and Pokemon had a baby... It would be way cooler than this 😂 My first JavaScript/jQuery project.</p>
+                </div>
+            </div>
+
+            <span>Websites:</span>
+
+            <div class="columns">
+                <div class="column col-4 col-sm-12">
+                    <div class="hvr-float-shadow">
+                        <a href="http://jsmb.co.nz" target="_blank"><img src="img/jsmb.png"></a>
+                    </div><a class="underline" href="http://jsmb.co.nz" target="_blank">John Macdonald Builders</a>
+                    <p class="description">First website for a client, revamped the previous design and made it responsive.</p>
+                </div>
+                <div class="column col-4 col-sm-12">
+                    <div class="hvr-float-shadow">
+                        <a href="https://adultliteracy.ac.nz" target="_blank"><img src="img/adlit.png"></a>
+                    </div><a class="underline" href="https://adultliteracy.ac.nz" target="_blank">Adult Literacy Rural Trust</a>
+                    <p class="description">Redesigned this Wordpress website to make it more modern and easier to navigate.</p>
+                </div>
+                <div class="column col-4 col-sm-12">
+
+                    <div class="hvr-float-shadow">
+                        <a href="sleek/index.html"><img src="img/sleek.png"></a>
+                    </div> <a class="underline" href="sleek/index.html">Sleek Hair Design</a>
+                    <p class="description">One-page website built with Bootstrap, ear marked for possible future use as a WP theme.</p>
+                </div>
+            </div>
+        </main>
+    </div>
 
     <footer role="contentinfo">
-
+<span>Made with <a href="https://picturepan2.github.io/spectre/" target="_blank" class="underline">Spectre.css</a>, icons from <a href="http://fontello.com/" target="_blank" class="underline">Fontello</a></span>
     </footer>
-
+    <!-- Scroll to top button -->
+    <div id="scroll-top">
+        <a href="#top">
+            <i class="icon-up"></i>
+        </a>
+    </div>
+    <script src="/script.js" type="text/javascript"></script>
 </body>
 
 </html>

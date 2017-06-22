@@ -27,7 +27,7 @@ questionOne = {
 questionTwo = {
         number: 2,
         title: "2. Is JavaScript case-sensitive?",
-        answers: ['Yes, it\'s fussy about case', 'No, it doesn\'t give a fu--'],
+        answers: ['Yes, it\'s fussy about case', 'No, it\'s super chill'],
         correctAnswer: 0
 },
 
@@ -40,7 +40,7 @@ questionThree = {
 questionFour = {
         number: 4,
         title: "4. Which events are fired when an element is clicked?",
-        answers: ['<code>mousedown</code> and <code>mouseup</code>', '<code>click</code> only', '<code>mousedown</code>, <code>mouseup</code> and <code>click</code>'],
+        answers: ['<code>click</code>', '<code>mousedown</code> and <code>mouseup</code>', '<code>mousedown</code>, <code>mouseup</code> and <code>click</code>'],
         correctAnswer: 2
 },
 
@@ -52,7 +52,6 @@ questionFour = {
 }
 
 ];
-
 
 output = "";
 

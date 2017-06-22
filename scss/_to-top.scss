@@ -1,0 +1,49 @@
+/* Scroll to top button */
+
+#scroll-top {
+    visibility: hidden;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    z-index: 999;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: $box-shadow;
+    opacity: 0;
+    transform: scaleX(0) scaleY(0);
+    transition: opacity .3s 0s, transform 0.5s 0s, visibility 0s .3s;
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .3s 0s, transform 0.5s 0s;
+        transform: scaleX(1) scaleY(1);
+    }
+    a {
+        height: 100%;
+        width: 100%;
+        &:after {
+            content: none;
+        }
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.icon-up {
+    display: inline-block;
+    margin-top: 11px;
+    &:before {
+        font-size: 1.2rem;
+    }
+}
+
+// removing focus shadow
+i:focus {
+    box-shadow: none;
+}
+
+
