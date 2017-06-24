@@ -1,0 +1,18 @@
+/* Homepage Styles */
+
+.cards {
+    padding: 2rem;
+    text-shadow: $text-shadow;
+}
+
+.attractions {
+    @include background('../img/backgrounds/attractions-bg.jpg');
+}
+
+.history {
+    @include background('../img/backgrounds/history-bg.jpg');
+}
+
+.events {
+    @include background('../img/backgrounds/events-bg.jpg');
+}

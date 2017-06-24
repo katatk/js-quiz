@@ -1,0 +1,267 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    @include tablet {
+        font-size: 15px;
+    }
+}
+
+body {
+    @extend html;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 35px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    margin: 0 0 1em;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+a {
+    color: $primary;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $hover;
+    }
+}
+
+.float-right {
+    float: right;
+    margin: 0 0 1rem 1rem;
+}
+
+.float-left {
+    float: left;
+    margin: 0 1rem 0 1rem;
+}
+
+.light {
+    font-weight: 400;
+}
+
+.navbar-custom {
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(white, 0.3);
+    text-transform: uppercase;
+    font-family: "Montserrat", "Helvetica Neue", sans-serif;
+    background-color: black;
+    text-shadow: $text-shadow;
+    .navbar-toggle {
+        padding: 9px 10px;
+        font-size: 16px;
+        color: #fff;
+        background-color: rgba(255, 255, 255, .2);
+        font-size: 12px;
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+    .navbar-brand {
+        font-weight: 700;
+        &:focus {
+            outline: none;
+        }
+    }
+    a {
+        color: white;
+    }
+    .nav {
+        li {
+            a {
+                -webkit-transition: background .3s ease-in-out;
+                -moz-transition: background .3s ease-in-out;
+                transition: background .3s ease-in-out;
+                &:hover {
+                    color: rgba(white, 0.8);
+                    outline: none;
+                    background-color: transparent;
+                }
+                &:focus,
+                &:active {
+                    outline: none;
+                    background-color: transparent;
+                }
+            }
+            &.active {
+                outline: none;
+                a {
+                    background-color: rgba(white, 0.3);
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    @include tablet {
+        padding: 20px 0;
+        border-bottom: none;
+        letter-spacing: 1px;
+        background: transparent;
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out;
+        &.top-nav-collapse {
+            padding: 0;
+            background: black;
+            border-bottom: 1px solid rgba(white, 0.3);
+        }
+    }
+}
+
+.intro {
+    display: table;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: white;
+    background: url(../img/intro-bg-xs.jpg) no-repeat bottom center scroll;
+    @include tablet {
+        background-image: url(../img/intro-bg-sm.jpg);
+    }
+    @include desktop {
+        background-image: url(../img/intro-bg-lg.jpg);
+    }
+    background-color: black;
+    background-size: cover;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 100%);
+        width: 100%;
+        height: 50px;
+        @include tablet {
+            height: 100px;
+        }
+        @include desktop {
+            height: 200px;
+        }
+    }
+    .intro-body {
+        display: table-cell;
+        vertical-align: middle;
+        .brand-heading {
+            font-size: 7rem;
+            text-shadow: $text-shadow-darker;
+        }
+        .intro-text {
+            font-size: 1rem;
+            text-shadow: $text-shadow-darker;
+            margin-top: 0.5em;
+        }
+        .hero-h1 {
+            text-shadow: $text-shadow-darker;
+            font-size: 2.8rem;
+            margin: $header-height-phone + 100px 0 100px;
+            @include tablet {
+                margin: 250px 0;
+            }
+            @include laptop {
+                margin: 350px 0;
+            }
+            @include desktop {
+                margin: 425px 0;
+            }
+        }
+    }
+}
+
+section {
+    padding: 50px 0;
+    @media(min-width: 1367px) {
+        padding: 80px 0;
+    }
+}
+
+.alt-img .row {
+    &:nth-of-type(odd) img {
+        float: left;
+        margin-right: 2rem;
+    }
+    &:nth-of-type(even) img {
+        float: right;
+        margin-left: 1.5rem;
+    }
+    img {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3.5rem;
+        max-height: 200px;
+        width: auto;
+        @include phone {
+            display: inline;
+            margin-bottom: 2rem;
+        }
+        @include tablet {
+            margin-bottom: 3.5rem;
+        }
+    }
+}
+
+.btn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-radius: 4px;
+    padding: 8px 16px;
+    @include tablet {
+        padding: 6px 12px;
+    }
+}
+
+.btn-default {
+    border: 1px solid $primary;
+    color: #fff;
+    background-color: $primary;
+    &:hover,
+    &:focus {
+        border: 1px solid $hover;
+        outline: none;
+        color: #fff;
+        background-color: $hover;
+    }
+}
+
+iframe {
+    width: 100%;
+}
+
+.date {
+    color: #a5a5a5;
+}
