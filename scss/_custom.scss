@@ -25,6 +25,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    
 }
 
 a,
@@ -40,9 +41,17 @@ a,
 .underline:after {
     content: "";
     display: block;
-   border-bottom: 3px solid $primary-color;
+    border: 2px solid transparent;
+    -o-border-image: linear-gradient(to left, #fad0d9 0%, #fccdaf 50%, #fcddbc 100%);
+    border-image: -webkit-gradient(linear, right top, left top, from(#fad0d9), color-stop(50%, #fccdaf), to(#fcddbc));
+    border-image: linear-gradient(to left, #fad0d9 0%, #fccdaf 50%, #fcddbc 100%);
+    border-image-slice: 1;
+    -webkit-transform: scaleX(1);
     transform: scaleX(1);
+    -webkit-transition: -webkit-transform 250ms ease-in-out;
+    transition: -webkit-transform 250ms ease-in-out;
     transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
     margin-top: -0.40em;
     z-index: -1;
     position: relative;
@@ -160,6 +169,7 @@ img {
     max-width: 800px;
     flex: 1;
     padding: 5rem 2rem;
+    scroll-behaviour: smooth;
 }
 
 .columns {
@@ -172,7 +182,7 @@ img {
 
 footer {
     border-top: 1px solid #dddddd;
-    background: linear-gradient(270deg, #ead2ff, #f8c8c8, #f8e0b9);
+    background: linear-gradient(270deg, #fad0d9, #fccdaf, #fcddbc);
     background-size: 600% 600%;
     -webkit-animation: rainbow 10s ease infinite;
     -moz-animation: rainbow 10s ease infinite;
@@ -214,56 +224,3 @@ footer {
     padding: 0.5em;
     z-index: 1;
 }
-
-
-/* section {
-    padding: 6rem 0;
-    border-bottom: 1px solid $border-color;
-}
-
-section>.container {
-    max-width: 1000px;
-}
-
-.container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-header {
-    background: $primary-color;
-    color: white;
-    padding: 6rem 0 2rem;
-    position: relative;
-    h1 {
-        font-family: 'Coiny', cursive;
-    }
-}
-
-.prompt {
-    display: block;
-    margin-top: 4rem;
-    .down-arrow {
-        -webkit-transform: scaleY(-1);
-        transform: scaleY(-1);
-        display: block;
-    }
-}
-
-.about {
-    background-color: #fafafa;
-    p {
-        text-align: left;
-    }
-    h2 {
-        margin-top: 1em;
-        &:first-child {
-            margin-top: 0;
-        }
-    }
-    .column {
-        border: 1px solid $border-color;
-        box-shadow: $box-shadow;
-        background-color: #fff;
-    }
-}*/

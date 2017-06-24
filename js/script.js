@@ -9,32 +9,24 @@ var scroll_top_duration = 700;
 
 
 function toggleScrollTop() {
-     console.log("scrolling");
     if (this.pageYOffset > offset) {
         backTop.classList.add("visible");
     }
-    
+
     if (this.pageYOffset < offset) {
         backTop.classList.remove("visible");
     }
 }
 
-// hide or show the "back to top" link
+function smoothScroll() {
+   window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+}
+
+// hide or show the back to top link
 window.addEventListener("scroll", toggleScrollTop);
 
-
-// rainbow links
-
-var colors = ["papayawhip", "peachpuff", "mistyrose", "lavender", "lightcyan", "#bbfad8"];
-
-var underlineClass = ".underline:after {border-color:" + colors[x] + "}";
-
-var underline = document.getElementsByClassName("underline");
-
-for(var i=0; i<underline.length; i++) {
-    underline[i].classList.add = underlineClass;
-    
-}
+// smooth scroll when back to top link clicked
+backTop.addEventListener("click", smoothScroll);
 
 // attributions popup
 /* $attr_link = $('.attr-link');

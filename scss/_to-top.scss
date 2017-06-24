@@ -21,15 +21,9 @@
         transition: opacity .3s 0s, transform 0.5s 0s;
         transform: scaleX(1) scaleY(1);
     }
-    a {
-        height: 100%;
-        width: 100%;
-        &:after {
-            content: none;
-        }
-        &:focus {
-            box-shadow: none;
-        }
+    
+    &:hover {
+        cursor: pointer;
     }
 }
 
