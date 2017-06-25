@@ -1,62 +1,62 @@
 [{
-    "name": "Bengal Tiger",
+    "name": "Tiger",
     "description": "A fearsome predator weighing up to 325kg, you wouldn't want to mess with one!",
     "src": "img/tiger.svg",
     "bait": {
-        "Meat": 0.6
+        "Steak": 0.6
     }
 }, {
-    "name": "Giant Panda",
+    "name": "Panda",
     "description": "A peaceful and widely adored animal that is native to south central China.",
     "src": "img/panda.svg",
     "bait": {
-        "Lettuce": 0.05
+        "Lettuce": 0.10
     }
 }, {
-    "name": "Eastern Gorilla",
+    "name": "Gorilla",
     "description": "Gorillas live in groups called troops and are closely related to humans.",
     "src": "img/gorilla.svg",
     "bait": {
-        "Bananas": 0.20,
+        "Banana": 0.20,
         "Lettuce": 0.05
     }
 }, {
-    "name": "Amur Leopard",
+    "name": "Leopard",
     "description": "This feline is incredibly rare, it is said only about 60 exist in the wild today.",
     "src": "img/leopard.svg",
     "bait": {
-        "Meat": 0.3
+        "Steak": 0.3
     }
 }, {
     "name": "Chimpanzee",
     "description": "Chimpanzees are the closest living relative of humans along with the Bonobo.",
     "src": "img/chimp.svg",
     "bait": {
-        "Bananas": 0.40,
+        "Banana": 0.40,
         "Lettuce": 0.1
     }
 
 }, {
-    "name": "Black Panther",
+    "name": "Panther",
     "description": "The black panther is actually a genetic variation of leopard and jaguar.",
     "src": "img/panther.svg",
     "bait": {
-        "Meat": 0.1
+        "Steak": 0.1
     }
 }, {
     "name": "Elephant",
     "description": "Elephants really do have a remarkable memory, it's not just a myth!",
     "src": "img/elephant.svg",
     "bait": {
-        "Lettuce": 0.75,
-        "Bananas": 0.1
+        "Lettuce": 0.70,
+        "Banana": 0.1
     }
 }, {
     "name": "Orangutan",
     "description": "An orangutan's arms are longer and stronger than its legs, reaching up to 2 metres.",
     "src": "img/orangutan.svg",
     "bait": {
-        "Bananas": 0.3,
+        "Banana": 0.3,
         "Lettuce": 0.05
     }
 }]

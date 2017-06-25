@@ -7,7 +7,9 @@
  * Licensed under MIT Open Source
  */
 .slide-in-down.mui-enter, .slide-in-left.mui-enter, .slide-in-up.mui-enter, .slide-in-right.mui-enter, .slide-out-down.mui-leave, .slide-out-right.mui-leave, .slide-out-up.mui-leave, .slide-out-left.mui-leave, .fade-in.mui-enter, .fade-out.mui-leave, .hinge-in-from-top.mui-enter, .hinge-in-from-right.mui-enter, .hinge-in-from-bottom.mui-enter, .hinge-in-from-left.mui-enter, .hinge-in-from-middle-x.mui-enter, .hinge-in-from-middle-y.mui-enter, .hinge-out-from-top.mui-leave, .hinge-out-from-right.mui-leave, .hinge-out-from-bottom.mui-leave, .hinge-out-from-left.mui-leave, .hinge-out-from-middle-x.mui-leave, .hinge-out-from-middle-y.mui-leave, .scale-in-up.mui-enter, .scale-in-down.mui-enter, .scale-out-up.mui-leave, .scale-out-down.mui-leave, .spin-in.mui-enter, .spin-out.mui-leave, .spin-in-ccw.mui-enter, .spin-out-ccw.mui-leave {
+  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
+  -webkit-transition-timing-function: linear;
   transition-timing-function: linear; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -182,6 +184,7 @@ figure {
    * Address differences between Firefox and other browsers.
    */
 hr {
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -288,6 +291,7 @@ input {
    */
 input[type="checkbox"],
 input[type="radio"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -309,6 +313,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 2 */ }
 
@@ -371,11 +376,13 @@ th {
 
 html {
   font-size: 100%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 *,
 *:before,
 *:after {
+  -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
 body {
@@ -1401,6 +1408,7 @@ kbd {
   * {
     background: transparent !important;
     color: black !important;
+    -webkit-box-shadow: none !important;
     box-shadow: none !important;
     text-shadow: none !important; }
   .show-for-print {
@@ -1458,6 +1466,7 @@ kbd {
   line-height: 1;
   cursor: pointer;
   -webkit-appearance: none;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
   vertical-align: middle;
   border: 1px solid transparent;
@@ -1577,6 +1586,7 @@ kbd {
 [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
 textarea {
   display: block;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   height: 2.4375rem;
@@ -1587,9 +1597,13 @@ textarea {
   font-size: 1rem;
   color: #0a0a0a;
   background-color: #fefefe;
+  -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   border-radius: 0;
+  -webkit-transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+  transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
   -webkit-appearance: none;
   -moz-appearance: none; }
   [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus,
@@ -1597,8 +1611,12 @@ textarea {
     border: 1px solid #8a8a8a;
     background-color: #fefefe;
     outline: none;
+    -webkit-box-shadow: 0 0 5px #cacaca;
     box-shadow: 0 0 5px #cacaca;
-    transition: box-shadow 0.5s, border-color 0.25s ease-in-out; }
+    -webkit-transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+    transition: border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+    transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+    transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s; }
 
 textarea {
   max-width: 100%; }
@@ -1618,6 +1636,7 @@ textarea[readonly] {
   -moz-appearance: none; }
 
 input[type='search'] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 [type='file'],
@@ -1919,10 +1938,8 @@ select {
 
 .is-accordion-submenu-parent[aria-expanded='true'] > a::after {
   -webkit-transform-origin: 50% 50%;
-      -ms-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
   -webkit-transform: scaleY(-1);
-      -ms-transform: scaleY(-1);
           transform: scaleY(-1); }
 
 .badge {
@@ -2109,17 +2126,16 @@ select {
   width: 100%;
   background: #fefefe;
   transition: -webkit-transform 0.15s linear;
+  -webkit-transition: -webkit-transform 0.15s linear;
   transition: transform 0.15s linear;
   transition: transform 0.15s linear, -webkit-transform 0.15s linear; }
   .is-drilldown-submenu.is-active {
     z-index: 1;
     display: block;
     -webkit-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
             transform: translateX(-100%); }
   .is-drilldown-submenu.is-closing {
     -webkit-transform: translateX(100%);
-        -ms-transform: translateX(100%);
             transform: translateX(100%); }
 
 .is-drilldown-submenu-parent > a {
@@ -2426,6 +2442,7 @@ body {
   position: relative;
   width: 100%;
   transition: -webkit-transform 0.5s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease; }
   .off-canvas-wrapper-inner::before, .off-canvas-wrapper-inner::after {
@@ -2439,11 +2456,13 @@ body {
   min-height: 100%;
   background: #fefefe;
   transition: -webkit-transform 0.5s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   z-index: 1;
+  -webkit-box-shadow: 0 0 10px rgba(10, 10, 10, 0.5);
   box-shadow: 0 0 10px rgba(10, 10, 10, 0.5); }
 
 .js-off-canvas-exit {
@@ -2455,6 +2474,7 @@ body {
   height: 100%;
   background: rgba(254, 254, 254, 0.25);
   cursor: pointer;
+  -webkit-transition: background 0.5s ease;
   transition: background 0.5s ease; }
 
 .off-canvas {
@@ -2464,7 +2484,6 @@ body {
   max-height: 100%;
   overflow-y: auto;
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0); }
   [data-whatinput='mouse'] .off-canvas {
     outline: 0; }
@@ -2474,7 +2493,6 @@ body {
     width: 250px; }
     .is-open-left {
       -webkit-transform: translateX(250px);
-          -ms-transform: translateX(250px);
               transform: translateX(250px); }
   .off-canvas.position-right {
     right: -250px;
@@ -2482,7 +2500,6 @@ body {
     width: 250px; }
     .is-open-right {
       -webkit-transform: translateX(-250px);
-          -ms-transform: translateX(-250px);
               transform: translateX(-250px); }
 
 @media screen and (min-width: 40em) {
@@ -2550,7 +2567,6 @@ body {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: 10;
   padding: 1rem;
@@ -2668,7 +2684,6 @@ body {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute;
   margin: 0;
@@ -2699,15 +2714,16 @@ body {
   max-width: 100%;
   height: 0.5rem;
   background-color: #cacaca;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
   .slider-fill.is-dragging {
+    -webkit-transition: all 0s linear;
     transition: all 0s linear; }
 
 .slider-handle {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   position: absolute;
   left: 0;
@@ -2716,6 +2732,7 @@ body {
   width: 1.4rem;
   height: 1.4rem;
   background-color: #8C8C68;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
@@ -2725,6 +2742,7 @@ body {
   .slider-handle:hover {
     background-color: #777758; }
   .slider-handle.is-dragging {
+    -webkit-transition: all 0s linear;
     transition: all 0s linear; }
 
 .slider.disabled,
@@ -2738,7 +2756,6 @@ body {
   height: 12.5rem;
   margin: 0 1.25rem;
   -webkit-transform: scale(1, -1);
-      -ms-transform: scale(1, -1);
           transform: scale(1, -1); }
   .slider.vertical .slider-fill {
     top: 0;
@@ -2751,7 +2768,6 @@ body {
     width: 1.4rem;
     height: 1.4rem;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
             transform: translateX(-50%); }
 
 .sticky-container {
@@ -2869,6 +2885,7 @@ body.is-reveal-open {
   position: relative;
   width: 4rem;
   height: 2rem;
+  -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
   border-radius: 0;
   color: inherit;
@@ -2884,6 +2901,7 @@ body.is-reveal-open {
     left: 0.25rem;
     top: 0.25rem;
     width: 1.5rem;
+    -webkit-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
@@ -2899,7 +2917,6 @@ body.is-reveal-open {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
 
 .switch-active {
@@ -3047,6 +3064,7 @@ table.hover tr:nth-of-type(even):hover {
 
 .tabs-content {
   background: #fefefe;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   border: 1px solid #e6e6e6;
   border-top: 0; }
@@ -3063,14 +3081,19 @@ table.hover tr:nth-of-type(even):hover {
 
 .thumbnail {
   border: solid 4px #fefefe;
+  -webkit-box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
   box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
   display: inline-block;
   line-height: 0;
   max-width: 100%;
+  -webkit-transition: -webkit-box-shadow 200ms ease-out;
+  transition: -webkit-box-shadow 200ms ease-out;
   transition: box-shadow 200ms ease-out;
+  transition: box-shadow 200ms ease-out, -webkit-box-shadow 200ms ease-out;
   border-radius: 0;
   margin-bottom: 1rem; }
   .thumbnail:hover, .thumbnail:focus {
+    -webkit-box-shadow: 0 0 6px 1px rgba(140, 140, 104, 0.5);
     box-shadow: 0 0 6px 1px rgba(140, 140, 104, 0.5); }
 
 .title-bar {
@@ -3114,9 +3137,11 @@ table.hover tr:nth-of-type(even):hover {
     background: #fefefe;
     top: 0;
     left: 0;
+    -webkit-box-shadow: 0 7px 0 #fefefe, 0 14px 0 #fefefe;
     box-shadow: 0 7px 0 #fefefe, 0 14px 0 #fefefe; }
   .menu-icon:hover::after {
     background: #cacaca;
+    -webkit-box-shadow: 0 7px 0 #cacaca, 0 14px 0 #cacaca;
     box-shadow: 0 7px 0 #cacaca, 0 14px 0 #cacaca; }
 
 .menu-icon.dark {
@@ -3135,9 +3160,11 @@ table.hover tr:nth-of-type(even):hover {
     background: #0a0a0a;
     top: 0;
     left: 0;
+    -webkit-box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a;
     box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a; }
   .menu-icon.dark:hover::after {
     background: #8a8a8a;
+    -webkit-box-shadow: 0 7px 0 #8a8a8a, 0 14px 0 #8a8a8a;
     box-shadow: 0 7px 0 #8a8a8a, 0 14px 0 #8a8a8a; }
 
 .has-tip {
@@ -3170,7 +3197,6 @@ table.hover tr:nth-of-type(even):hover {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
             transform: translateX(-50%); }
   .tooltip.top::before {
     content: '';
@@ -3196,7 +3222,6 @@ table.hover tr:nth-of-type(even):hover {
     left: 100%;
     top: 50%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
             transform: translateY(-50%); }
   .tooltip.right::before {
     content: '';
@@ -3212,7 +3237,6 @@ table.hover tr:nth-of-type(even):hover {
     right: 100%;
     top: 50%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
             transform: translateY(-50%); }
 
 .top-bar {
@@ -3275,9 +3299,9 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-in-down.mui-enter {
   -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
           transform: translateY(-100%);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
@@ -3285,14 +3309,13 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-in-down.mui-enter.mui-enter-active {
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0); }
 
 .slide-in-left.mui-enter {
   -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
           transform: translateX(-100%);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
@@ -3300,14 +3323,13 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-in-left.mui-enter.mui-enter-active {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0); }
 
 .slide-in-up.mui-enter {
   -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
           transform: translateY(100%);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
@@ -3315,14 +3337,13 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-in-up.mui-enter.mui-enter-active {
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0); }
 
 .slide-in-right.mui-enter {
   -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
           transform: translateX(100%);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
@@ -3330,14 +3351,13 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-in-right.mui-enter.mui-enter-active {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0); }
 
 .slide-out-down.mui-leave {
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
@@ -3345,14 +3365,13 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-out-down.mui-leave.mui-leave-active {
   -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
           transform: translateY(100%); }
 
 .slide-out-right.mui-leave {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
@@ -3360,14 +3379,13 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-out-right.mui-leave.mui-leave-active {
   -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
           transform: translateX(100%); }
 
 .slide-out-up.mui-leave {
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
@@ -3375,14 +3393,13 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-out-up.mui-leave.mui-leave-active {
   -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
           transform: translateY(-100%); }
 
 .slide-out-left.mui-leave {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
@@ -3390,11 +3407,11 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-out-left.mui-leave.mui-leave-active {
   -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
           transform: translateX(-100%); }
 
 .fade-in.mui-enter {
   opacity: 0;
+  -webkit-transition-property: opacity;
   transition-property: opacity; }
 
 .fade-in.mui-enter.mui-enter-active {
@@ -3402,6 +3419,7 @@ table.hover tr:nth-of-type(even):hover {
 
 .fade-out.mui-leave {
   opacity: 1;
+  -webkit-transition-property: opacity;
   transition-property: opacity; }
 
 .fade-out.mui-leave.mui-leave-active {
@@ -3411,9 +3429,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotateX(-90deg);
           transform: perspective(2000px) rotateX(-90deg);
   -webkit-transform-origin: top;
-      -ms-transform-origin: top;
           transform-origin: top;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
@@ -3427,9 +3445,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotateY(-90deg);
           transform: perspective(2000px) rotateY(-90deg);
   -webkit-transform-origin: right;
-      -ms-transform-origin: right;
           transform-origin: right;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
@@ -3443,9 +3461,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotateX(90deg);
           transform: perspective(2000px) rotateX(90deg);
   -webkit-transform-origin: bottom;
-      -ms-transform-origin: bottom;
           transform-origin: bottom;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
@@ -3459,9 +3477,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotateY(90deg);
           transform: perspective(2000px) rotateY(90deg);
   -webkit-transform-origin: left;
-      -ms-transform-origin: left;
           transform-origin: left;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
@@ -3475,9 +3493,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotateX(-90deg);
           transform: perspective(2000px) rotateX(-90deg);
   -webkit-transform-origin: center;
-      -ms-transform-origin: center;
           transform-origin: center;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
@@ -3491,9 +3509,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotateY(-90deg);
           transform: perspective(2000px) rotateY(-90deg);
   -webkit-transform-origin: center;
-      -ms-transform-origin: center;
           transform-origin: center;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
@@ -3507,9 +3525,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: top;
-      -ms-transform-origin: top;
           transform-origin: top;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
@@ -3523,9 +3541,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: right;
-      -ms-transform-origin: right;
           transform-origin: right;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
@@ -3539,9 +3557,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: bottom;
-      -ms-transform-origin: bottom;
           transform-origin: bottom;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
@@ -3555,9 +3573,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: left;
-      -ms-transform-origin: left;
           transform-origin: left;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
@@ -3571,9 +3589,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: center;
-      -ms-transform-origin: center;
           transform-origin: center;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
@@ -3587,9 +3605,9 @@ table.hover tr:nth-of-type(even):hover {
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: center;
-      -ms-transform-origin: center;
           transform-origin: center;
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
@@ -3601,158 +3619,162 @@ table.hover tr:nth-of-type(even):hover {
 
 .scale-in-up.mui-enter {
   -webkit-transform: scale(0.5);
-      -ms-transform: scale(0.5);
           transform: scale(0.5);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .scale-in-up.mui-enter.mui-enter-active {
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
   opacity: 1; }
 
 .scale-in-down.mui-enter {
   -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
           transform: scale(1.5);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .scale-in-down.mui-enter.mui-enter-active {
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
   opacity: 1; }
 
 .scale-out-up.mui-leave {
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .scale-out-up.mui-leave.mui-leave-active {
   -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
           transform: scale(1.5);
   opacity: 0; }
 
 .scale-out-down.mui-leave {
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .scale-out-down.mui-leave.mui-leave-active {
   -webkit-transform: scale(0.5);
-      -ms-transform: scale(0.5);
           transform: scale(0.5);
   opacity: 0; }
 
 .spin-in.mui-enter {
   -webkit-transform: rotate(-0.75turn);
-      -ms-transform: rotate(-0.75turn);
           transform: rotate(-0.75turn);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .spin-in.mui-enter.mui-enter-active {
   -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
           transform: rotate(0);
   opacity: 1; }
 
 .spin-out.mui-leave {
   -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
           transform: rotate(0);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .spin-out.mui-leave.mui-leave-active {
   -webkit-transform: rotate(0.75turn);
-      -ms-transform: rotate(0.75turn);
           transform: rotate(0.75turn);
   opacity: 0; }
 
 .spin-in-ccw.mui-enter {
   -webkit-transform: rotate(0.75turn);
-      -ms-transform: rotate(0.75turn);
           transform: rotate(0.75turn);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .spin-in-ccw.mui-enter.mui-enter-active {
   -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
           transform: rotate(0);
   opacity: 1; }
 
 .spin-out-ccw.mui-leave {
   -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
           transform: rotate(0);
   transition-property: opacity, -webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .spin-out-ccw.mui-leave.mui-leave-active {
   -webkit-transform: rotate(-0.75turn);
-      -ms-transform: rotate(-0.75turn);
           transform: rotate(-0.75turn);
   opacity: 0; }
 
 .slow {
+  -webkit-transition-duration: 750ms !important;
   transition-duration: 750ms !important; }
 
 .fast {
+  -webkit-transition-duration: 250ms !important;
   transition-duration: 250ms !important; }
 
 .linear {
+  -webkit-transition-timing-function: linear !important;
   transition-timing-function: linear !important; }
 
 .ease {
+  -webkit-transition-timing-function: ease !important;
   transition-timing-function: ease !important; }
 
 .ease-in {
+  -webkit-transition-timing-function: ease-in !important;
   transition-timing-function: ease-in !important; }
 
 .ease-out {
+  -webkit-transition-timing-function: ease-out !important;
   transition-timing-function: ease-out !important; }
 
 .ease-in-out {
+  -webkit-transition-timing-function: ease-in-out !important;
   transition-timing-function: ease-in-out !important; }
 
 .bounce-in {
+  -webkit-transition-timing-function: cubic-bezier(0.485, 0.155, 0.24, 1.245) !important;
   transition-timing-function: cubic-bezier(0.485, 0.155, 0.24, 1.245) !important; }
 
 .bounce-out {
+  -webkit-transition-timing-function: cubic-bezier(0.485, 0.155, 0.515, 0.845) !important;
   transition-timing-function: cubic-bezier(0.485, 0.155, 0.515, 0.845) !important; }
 
 .bounce-in-out {
+  -webkit-transition-timing-function: cubic-bezier(0.76, -0.245, 0.24, 1.245) !important;
   transition-timing-function: cubic-bezier(0.76, -0.245, 0.24, 1.245) !important; }
 
 .short-delay {
+  -webkit-transition-delay: 300ms !important;
   transition-delay: 300ms !important; }
 
 .long-delay {
+  -webkit-transition-delay: 700ms !important;
   transition-delay: 700ms !important; }
 
 .shake {
@@ -3907,11 +3929,14 @@ table.hover tr:nth-of-type(even):hover {
     min-height: 100%; }
   .wrapper {
     position: relative;
-    background: url("../img/jungle-background.svg") no-repeat fixed 100% 100%; }
+    background: url("../img/jungle-background.svg") no-repeat fixed;}
   .heading {
     font-family: 'snigletextrabold';
     color: white;
-    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000; }
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000; 
+    padding: 0.9375rem 0;
+    margin: 0;}
+    
   .first {
     display: block; }
   .container {
@@ -3960,7 +3985,7 @@ table.hover tr:nth-of-type(even):hover {
     border: none;
     display: block;
     text-align: left; }
-    .button.bait[data-bait="Meat"] {
+    .button.bait[data-bait="Steak"] {
       background: url("../img/meat.png") no-repeat;
       background-size: contain;
       padding-left: 3.5rem;
@@ -3970,7 +3995,7 @@ table.hover tr:nth-of-type(even):hover {
       background-size: contain;
       padding-left: 3.5rem;
       color: #000; }
-    .button.bait[data-bait="Bananas"] {
+    .button.bait[data-bait="Banana"] {
       background: url("../img/banana.png") no-repeat;
       background-size: contain;
       padding-left: 3.5rem;
@@ -4045,12 +4070,12 @@ table.hover tr:nth-of-type(even):hover {
   .button.bait {
     display: inline-block;
     text-align: center; }
-    .button.bait[data-bait="Meat"] {
+    .button.bait[data-bait="Steak"] {
       padding-left: 2.5rem; }
     .button.bait[data-bait="Lettuce"] {
       margin-left: 1em;
       padding-left: 3.2rem; }
-    .button.bait[data-bait="Bananas"] {
+    .button.bait[data-bait="Banana"] {
       margin-left: 1em;
       padding-left: 2.5rem; }
   .icon,

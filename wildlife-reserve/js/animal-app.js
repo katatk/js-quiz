@@ -371,14 +371,10 @@ function updateAnimals() {
         html += '<li id="animal-';
         html += index;
         html += '">';
-        html += '<div class="animal-container" onmouseover="showDescrip(';
-        html += index;
-        html += ')" onmouseout="hideDescrip(';
-        html += index;
-        html += ')">';
+        html += '<div class="animal-container">';
         html += '<img src="';
         html += animal.src;
-        html += '" class="icon" alt="';
+        html += '" class="icon" title="';
         html += animal.description;
         html += '"/>';
         html += animal.name;
@@ -401,7 +397,6 @@ function updateAnimals() {
 
 };
 
-
 //Function that takes an array and adds elements to uniqueElements array
 //if they aren't aleady in there then returns the array (strips out duplicate
 //elements)
@@ -419,18 +414,3 @@ function unique(arr) {
 
     return uniqueElements;
 };
-
-
-
-
-
-//Show animal description on hover
-//
-/*function tooltipShow(index) {
-    var description = userAnimals[index].description;
-    description.show();
-}
-
-function tooltipHide(index) {
-    userAnimals[index].description.hide();
-}*/
