@@ -150,22 +150,22 @@
                     <h2>Submit Your Favourite Place</h2>
                     <p>Have a favourite spot in New Zealand that you think is worth featuring on our <a href="">Attractions</a> page? Tell us why you think it deserves a mention below!</p>
 
-                    <form>
+                   <form>
                         <div class="form-group">
-                            <label for="name">Full Name <span class="asterisk">*</span></label>
-                            <input type="text" class="form-control" id="full-name" placeholder="Jane Smith" required>
+                             <span class="form-icon glyphicon glyphicon-user"></span><label for="name">Full Name <span class="asterisk">*</span></label>
+                            <input type="text" class="form-control" id="full-name" placeholder="Jane Smith" >
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address <span class="asterisk">*</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="you@email.com" required>
+                             <span class="form-icon glyphicon glyphicon-envelope"></span><label for="email">Email Address <span class="asterisk">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="you@email.com" >
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone <span class="asterisk">*</span></label>
-                            <input type="tel" class="form-control" id="phone-number" placeholder="09 999 0000" required>
+                            <span class="form-icon glyphicon glyphicon-phone"></span><label for="phone">Phone <span class="asterisk">*</span></label>
+                            <input type="tel" class="form-control" id="phone-number" placeholder="09 999 0000" >
                         </div>
                         <div class="form-group">
-                            <label for="message">Explain what you love about your favourite place <span class="asterisk">*</span></label>
-                            <textarea class="form-control" rows="3" id="message" placeholder="Max 500 characters" maxlength="500" minlength="10" required></textarea>
+                            <label for="message">What do you love about your favourite place? <span class="asterisk">*</span></label>
+                            <textarea class="form-control" rows="3" id="message" placeholder="Max 500 characters" maxlength="500" minlength="10" ></textarea>
                         </div>
                         <div class="form-group">
                             <label for="upload">Upload a photo of your favourite destination</label>
@@ -176,9 +176,10 @@
                                 <input type="checkbox">Sign me up for the newsletter
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button><button type="reset" class="btn btn-default">Clear</button>
+                        <button id="submit" type="button" class="btn btn-default">Submit</button><button type="reset" class="btn btn-default">Clear</button>
                     </form>
-                    <div id="validation-message"></div>
+                   
+                    <div id="validation-message-container"></div>
                 </div>
             </div>
         </div>

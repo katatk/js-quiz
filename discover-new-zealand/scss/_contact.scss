@@ -1,7 +1,7 @@
 /* contact form */
 
-button[type="submit"] {
-    margin-right: 2rem;
+#submit {
+    margin-right: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -14,6 +14,10 @@ button[type="submit"] {
     background-color: $background;
 }
 
-#validation-container {
-    margin-top: 2rem;
+#validation-message-container {
+    margin-top: 1rem;
+}
+
+.form-icon {
+    margin-right: 0.5rem;
 }

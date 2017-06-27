@@ -3,6 +3,13 @@
 .cards {
     padding: 2rem;
     text-shadow: $text-shadow;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.cards:hover {
+    -webkit-filter: none;
+    filter: none;
 }
 
 .attractions {
