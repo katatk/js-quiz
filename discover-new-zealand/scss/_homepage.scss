@@ -8,10 +8,14 @@
         max-width: 100%;
         height: auto;
         min-width: 600px;
+           -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+      
     }
     &:hover img {
         -webkit-filter: none;
         filter: none;
+       
     }
     position: relative;
     display: block;
