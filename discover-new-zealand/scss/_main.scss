@@ -58,13 +58,16 @@ a {
 }
 
 .float-right {
-    float: right;
-    margin: 0 0 1rem 1rem;
-}
-
-.float-left {
-    float: left;
-    margin: 0 1rem 0 1rem;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-height: 500px;
+    margin-bottom: 2rem;
+    @media (min-width: 600px) {
+        float: right;
+        margin: 0 0 1rem 1rem;
+    }
 }
 
 .light {
@@ -215,16 +218,20 @@ section {
 }
 
 .alt-img .row {
+    margin-bottom: 3rem;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
     @media (min-width: 660px) {
         &:nth-of-type(odd) img {
             float: left;
             margin-right: 2rem;
-            margin-bottom: 3.5rem;
+            
         }
         &:nth-of-type(even) img {
             float: right;
             margin-left: 1.5rem;
-            margin-bottom: 3.5rem;
         }
     }
     img {
