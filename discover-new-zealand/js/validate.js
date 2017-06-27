@@ -34,7 +34,7 @@ function validateEmail(email) {
         console.log("email returned false");
         return false;
 
-    } else if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(email)) {
+    } else if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
         errorMessage += "<li>" + email + " is NOT a valid email address</li>";
         return false;
 
@@ -55,7 +55,7 @@ function validatePhone(phone) {
     else if (phone != "") {
 
         // tests if phone only contains numbers or spaces
-        if (!/[0-9 ]+/.test(phone)) {
+        if (!/\+*[0-9 ]+/.test(phone)) {
             errorMessage += "<li>Please enter a number in the phone number field</li>";
             return false;
         }
