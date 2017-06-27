@@ -1,25 +1,39 @@
 /* Homepage Styles */
 
 .cards {
-    padding: 2rem;
-    text-shadow: $text-shadow;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    img {
+        text-shadow: $text-shadow;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        max-width: 100%;
+        height: auto;
+        min-width: 600px;
+    }
+    &:hover img {
+        -webkit-filter: none;
+        filter: none;
+    }
+    position: relative;
+    display: block;
+    text-align: center;
+    text-shadow: $text-shadow-darker;
+}
+
+@media (max-width: 650px) {
+    .cards {
+        padding: 0;
+    }
+}
+
+.inner-card {
+    padding: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
 }
 
 .cards:hover {
     -webkit-filter: none;
     filter: none;
-}
-
-.attractions {
-    @include background('../img/backgrounds/attractions-bg.jpg');
-}
-
-.history {
-    @include background('../img/backgrounds/history-bg.jpg');
-}
-
-.events {
-    @include background('../img/backgrounds/events-bg.jpg');
 }
