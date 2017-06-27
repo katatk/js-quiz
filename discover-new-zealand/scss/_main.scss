@@ -11,7 +11,11 @@ body {
     @extend html;
     font-family: "Montserrat", sans-serif;
     color: white;
-    background-color: black;
+    background-color: $background-primary;
+}
+
+.homepage {
+    overflow-x: hidden;
 }
 
 h1,
@@ -54,13 +58,16 @@ a {
 }
 
 .float-right {
-    float: right;
-    margin: 0 0 1rem 1rem;
-}
-
-.float-left {
-    float: left;
-    margin: 0 1rem 0 1rem;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-height: 500px;
+    margin-bottom: 2rem;
+    @media (min-width: 600px) {
+        float: right;
+        margin: 0 0 1rem 1rem;
+    }
 }
 
 .light {
@@ -69,10 +76,10 @@ a {
 
 .navbar-custom {
     margin-bottom: 0;
-    border-bottom: 1px solid rgba(white, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     text-transform: uppercase;
     font-family: "Montserrat", "Helvetica Neue", sans-serif;
-    background-color: black;
+    background-color: $background-primary;
     text-shadow: $text-shadow;
     .navbar-toggle {
         padding: 9px 10px;
@@ -131,7 +138,7 @@ a {
         transition: background .5s ease-in-out, padding .5s ease-in-out;
         &.top-nav-collapse {
             padding: 0;
-            background: black;
+            background: $background-primary;
             border-bottom: 1px solid rgba(white, 0.3);
         }
     }
@@ -150,7 +157,6 @@ a {
     @include desktop {
         background-image: url(../img/intro-bg-lg.jpg);
     }
-    background-color: black;
     background-size: cover;
     position: relative;
     &:after {
@@ -160,19 +166,29 @@ a {
         bottom: 0;
         left: 0;
         pointer-events: none;
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 100%);
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(11, 11, 11) 100%);
         width: 100%;
-        height: 50px;
+        height: 100px;
         @include tablet {
-            height: 100px;
+            height: 200px;
         }
         @include desktop {
-            height: 200px;
+            height: 400px;
         }
     }
     .intro-body {
         display: table-cell;
         vertical-align: middle;
+        padding: $header-height-phone + 100px 0 100px;
+        @include tablet {
+            padding: 250px 0;
+        }
+        @include laptop {
+            padding: 350px 0;
+        }
+        @include desktop {
+            padding: 425px 0;
+        }
         .brand-heading {
             font-size: 7rem;
             text-shadow: $text-shadow-darker;
@@ -186,16 +202,6 @@ a {
         .hero-h1 {
             text-shadow: $text-shadow-darker;
             font-size: 2.8rem;
-            margin: $header-height-phone + 100px 0 100px;
-            @include tablet {
-                margin: 250px 0;
-            }
-            @include laptop {
-                margin: 350px 0;
-            }
-            @include desktop {
-                margin: 425px 0;
-            }
         }
     }
 }
@@ -207,30 +213,48 @@ section {
     }
 }
 
+.content-section {
+    background-color: $background-secondary;
+}
+
 .alt-img .row {
-    &:nth-of-type(odd) img {
-        float: left;
-        margin-right: 2rem;
+    margin-bottom: 3rem;
+    
+    &:last-child {
+        margin-bottom: 0;
     }
-    &:nth-of-type(even) img {
-        float: right;
-        margin-left: 1.5rem;
+    @media (min-width: 660px) {
+        &:nth-of-type(odd) img {
+            float: left;
+            margin-right: 2rem;
+            
+        }
+        &:nth-of-type(even) img {
+            float: right;
+            margin-left: 1.5rem;
+        }
     }
     img {
         float: none;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 3.5rem;
+        margin-bottom: 2rem;
         max-height: 200px;
         width: auto;
         @include phone {
-            display: inline;
             margin-bottom: 2rem;
         }
         @include tablet {
             margin-bottom: 3.5rem;
         }
+    }
+}
+
+.events {
+    text-align: center;
+    @media (min-width: 660px) {
+        text-align: left;
     }
 }
 
@@ -264,5 +288,17 @@ iframe {
 }
 
 .date {
-    color: #a5a5a5;
+    color: $background-primary;
+    background: #ccc;
+    display: inline-block;
+    padding: 0.5em 0.75em;
+}
+
+.glyphicon-calendar,
+.glyphicon-map-marker {
+    margin-right: 0.5em;
+}
+
+.treaty {
+    background-color: #121212;
 }
