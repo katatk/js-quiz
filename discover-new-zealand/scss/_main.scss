@@ -12,6 +12,9 @@ body {
     font-family: "Montserrat", sans-serif;
     color: white;
     background-color: $background-primary;
+}
+
+.homepage {
     overflow-x: hidden;
 }
 
@@ -284,7 +287,8 @@ iframe {
     padding: 0.5em 0.75em;
 }
 
-.glyphicon-calendar, .glyphicon-map-marker {
+.glyphicon-calendar,
+.glyphicon-map-marker {
     margin-right: 0.5em;
 }
 
