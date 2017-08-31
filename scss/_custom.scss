@@ -1,20 +1,21 @@
 /* Base styles */
 
-@media screen and (min-width: 601px) {
-    html {
-        font-size: 12px;
-    }
-}
-
-@media screen and (min-width: 1367px) {
-    html {
+html {
+    font-size: 12px;
+    box-sizing: border-box;
+    @media screen and (min-width: 1367px) {
         font-size: 13px;
     }
 }
 
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 body {
     font-family: 'Varela Round', sans-serif;
-    text-align: center;
     color: #333;
     text-align: center;
     color: #222;
@@ -41,40 +42,31 @@ a:focus,
     box-shadow: none;
 }
 
-.underline:after {
-    content: "";
-    display: block;
-    border: 2px solid $primary-color;
-    /* -o-border-image: linear-gradient(to left, #fad0d9 0%, #fccdaf 50%, #fcddbc 100%);
-    border-image: -webkit-gradient(linear, right top, left top, from(#fad0d9), color-stop(50%, #fccdaf), to(#fcddbc));
-    border-image: linear-gradient(to left, #fad0d9 0%, #fccdaf 50%, #fcddbc 100%);
-    border-image-slice: 1;*/
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    -webkit-transition: -webkit-transform 250ms ease-in-out;
-    transition: -webkit-transform 250ms ease-in-out;
-    transition: transform 250ms ease-in-out;
-    transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
-    margin-top: -0.40em;
-    z-index: -1;
-    position: relative;
-}
-
-.underline:hover:after {
-    transform: scaleX(0);
+.underline {
+    &:after {
+        content: "";
+        display: block;
+        border: 2px solid $primary-color;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        -webkit-transition: -webkit-transform 250ms ease-in-out;
+        transition: -webkit-transform 250ms ease-in-out;
+        transition: transform 250ms ease-in-out;
+        transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+        margin-top: -0.40em;
+        z-index: -1;
+        position: relative;
+    }
+     :hover:after {
+        transform: scaleX(0);
+    }
 }
 
 h1,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
     font-family: 'fredoka_oneregular', sans-serif;
     font-weight: 400;
     margin-bottom: 0.5em;
-    clear: both;
 }
 
 h1 {
@@ -90,7 +82,7 @@ p {
     font-size: 1.3rem;
     max-width: 85ch;
     margin: 0 auto 2em;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .portfolio-img {
@@ -126,10 +118,7 @@ p {
 }
 
 footer {
-    border-top: 1px solid #dddddd;
-    width: 100%;
     padding: 0.5em;
-    background-color: $primary-color;
     .icon-container {
         margin: 0 0.5rem;
         display: inline-block;
