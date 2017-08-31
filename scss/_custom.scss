@@ -57,7 +57,7 @@ a:focus,
         z-index: -1;
         position: relative;
     }
-     :hover:after {
+     &:hover:after {
         transform: scaleX(0);
     }
 }
