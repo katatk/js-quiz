@@ -57,10 +57,12 @@ a:focus,
         z-index: -1;
         position: relative;
     }
-     &:hover:after {
+    
+}
+
+ .underline:hover:after {
         transform: scaleX(0);
     }
-}
 
 h1,
 h2 {
