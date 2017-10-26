@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* ==========================================================================
-Authors custom styles
+Custom styles
    ========================================================================== */
 
 @font-face {
@@ -11,6 +11,7 @@ Authors custom styles
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'montserratbold';
     src: url('../fonts/montserrat-bold.eot');
@@ -18,6 +19,7 @@ Authors custom styles
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'afta_serifregular';
     src: url('../fonts/aftaserifthin-regular.eot');
@@ -25,6 +27,7 @@ Authors custom styles
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'alex_brushregular';
     src: url('../fonts/alexbrush-regular-webfont.eot');
@@ -32,12 +35,15 @@ Authors custom styles
     font-weight: normal;
     font-style: normal;
 }
+
 html {
     font-size: 14px;
 }
+
 body {
     padding-top: 50px;
 }
+
 h2,
 h3,
 h4,
@@ -47,9 +53,11 @@ h6 {
     margin-top: 0.5em;
     margin-bottom: 1em;
 }
+
 h2 {
     font-size: 1.8rem;
 }
+
 body,
 p,
 input,
@@ -57,39 +65,46 @@ li {
     font-family: 'montserratregular';
     font-size: 1rem;
 }
+
 input {
     display: block;
     color: #555;
     max-width: 100%;
 }
+
 a {
     font-size: 1rem;
     text-decoration: none;
     color: hsl(0, 0%, 64%);
 }
+
 a:focus {
     text-decoration: none;
     color: hsl(0, 0%, 64%);
 }
+
 a:hover {
     color: inherit;
     text-decoration: none;
+    -webkit-transition: color 0.6s ease;
     transition: color 0.6s ease;
 }
+
 ul {
     padding-left: 0;
 }
+
 img {
     max-width: 100%;
     height: auto;
 }
+
 .container-fluid {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
 
 /*******************   SPECIFIC STYLES ***************************************/
-
 
 /*==================================================
 =            Header & Nav                          =
@@ -99,50 +114,64 @@ nav {
     background: #222;
     margin: 0;
 }
+
 nav li:hover {
     background-color: #222;
 }
+
 nav .main-nav li a {
     background-color: #222;
     font-family: 'montserratbold';
 }
+
 nav .main-nav li a:hover {
     background-color: #222;
     font-family: 'montserratbold';
 }
+
 .nav > li > a:hover,
 .nav > li > a:focus {
     background-color: #222;
 }
+
 .navbar.navbar-fixed-top {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
+
 .navbar-brand,
 .navbar-nav > li > a {
     text-shadow: none;
 }
+
 .navbar.navbar-fixed-top {
     padding-top: 0;
     padding-bottom: 0;
 }
+
 .navbar-brand {
     color: #fff;
     font-size: 1.6rem;
     font-family: 'alex_brushregular';
+    -webkit-text-decoration: bold;
     text-decoration: bold;
 }
+
 .brand {
     font-family: 'alex_brushregular';
     font-size: 2rem;
+    -webkit-text-decoration: bold;
     text-decoration: bold;
 }
+
 .navbar-inverse {
     background-image: none;
 }
+
 .navbar-inverse .navbar-brand {
     color: #fff;
 }
+
 .icon-bar {
     color: #fff;
 }
@@ -160,20 +189,25 @@ footer {
     color: #fff;
     font-size: 0.9rem;
 }
+
 footer p {
     text-align: center;
 }
+
 .footer.row:nth-child(3) {
     margin-bottom: 0;
 }
+
 footer .glyphicon {
     margin-right: 0.5rem;
 }
+
 footer h3 {
     text-align: center;
     margin-bottom: 1rem;
     margin-top: 2rem;
 }
+
 .social {
     display: block;
     padding-top: 0.5rem;
@@ -181,51 +215,64 @@ footer h3 {
     margin: 0 auto;
     text-align: center;
 }
+
 .social img {
     max-width: 32px;
     max-height: 32px;
 }
-.social a {
+
+.social-icon {
     margin-right: 5%;
+    cursor: pointer;
 }
-.social a:last-child {
+
+.social-icon:last-child {
     margin-right: 0;
 }
+
 .social img:hover {
     -webkit-filter: invert(100%);
     filter: invert(100%);
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 .contact-info {
     text-align: center;
 }
+
 .hours {
     max-width: 250px;
     margin-right: auto;
     margin-left: auto;
 }
+
 .hours li:nth-child(odd) {
     background: #404040;
 }
+
 .hours li {
     text-align: left;
 }
+
 .opening-hours {
     float: right;
     font-style: italic;
 }
+
 .copyright {
     background: #333;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
+
 .container-fluid.copyright {
     padding-right: 0;
     padding-left: 0;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
+
 .copyright p {
     margin: 0;
     text-align: left;
@@ -239,23 +286,25 @@ footer h3 {
     font-family: 'alex_brushregular';
     font-size: 2rem;
 }
+
 .btn-main {
     margin-top: 0;
     border: 3px solid #fff;
     color: #fff;
     text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     display: inline;
     margin-top: 0;
     font-size: 0.8rem;
     padding: 8px 8px;
 }
+
 .carousel.fade {
     opacity: 1;
 }
+
 .carousel.fade .item {
-    -moz-transition: opacity ease-in-out 2s;
-    -o-transition: opacity ease-in-out 2s;
     -webkit-transition: opacity ease-in-out 2s;
     transition: opacity ease-in-out 2s;
     left: 0 !important;
@@ -266,34 +315,55 @@ footer h3 {
     display: block !important;
     z-index: 1;
 }
+
 .carousel.fade .item:first-child {
     top: auto;
     position: relative;
 }
+
 .carousel.fade .item.active {
     opacity: 1;
-    -moz-transition: opacity ease-in-out 2s;
-    -o-transition: opacity ease-in-out 2s;
     -webkit-transition: opacity ease-in-out 2s;
     transition: opacity ease-in-out 2s;
     z-index: 2;
 }
+
 .carousel {
     position: relative;
 }
+
 .carousel-inner img {
     min-height: 200px;
 }
+
 .carousel h1 {
     text-align: justify;
     color: #111;
     font-size: 2rem;
 }
+
 .carousel-indicators {
     display: none;
 }
+
 .carousel-caption {
     padding-bottom: 8%;
+    text-align: left;
+}
+
+.award-text {
+    font-size: 1rem;
+    text-align: left;
+    display: inline-block;
+}
+
+.glyphicon-star {
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.glyphicon-star:first-child {
+    margin-left: 0.2rem;
 }
 
 /*==================================================
@@ -310,6 +380,7 @@ footer h3 {
     margin-top: 1.5rem;
     display: block;
 }
+
 .first.feature-imgs {
     margin-top: 0;
 }
@@ -323,17 +394,22 @@ footer h3 {
     padding-right: 0;
     background-color: #f5f5f5;
 }
+
 table {
     background-color: #222;
     color: #fff;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 .table thead tr th {
     border-bottom: 0 none;
 }
+
 .table tbody tr:last-child {
     border-bottom: 0 none;
 }
+
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
@@ -342,21 +418,26 @@ table {
 .table > tfoot > tr > td {
     border-top: none;
 }
+
 td {
     font-weight: lighter;
 }
+
 thead:nth-child(3n + 2) {
     background: #404040;
 }
+
 thead > tr > th:only-child {
     background-color: #D7D7D7;
     color: #222222;
 }
+
 .phone-fluid {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
 }
+
 .phone-fluid h2 {
     padding-left: 15px;
 }
@@ -366,13 +447,16 @@ thead > tr > th:only-child {
 ==================================================*/
 
 .reviews {
+    background: -webkit-gradient( linear, left top, left bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7))), url(../img/salon-background.jpg) no-repeat top left;
     background: linear-gradient( rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(../img/salon-background.jpg) no-repeat top left;
     background-size: cover;
 }
+
 blockquote {
     border-left: none;
     font-size: 1rem;
 }
+
 blockquote:before {
     content: "\201C";
     font-size: 5em;
@@ -390,24 +474,31 @@ blockquote:before {
 .btn {
     background-color: #d6d6d6;
 }
+
 .menu {
     display: block;
     margin: 0 auto;
 }
+
 .bookings {
     padding: 2rem 0 3rem;
 }
+
 #gmap {
     display: inline-block;
     width: 100%;
-    height: 260px;
+    height: 250px;
     margin-top: 1.5rem;
+}
+
+#submit {
+    background-color: #222;
+    color: #fff;
 }
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
-
 
 /*Media Queries for Carousel Caption*/
 
@@ -441,6 +532,15 @@ blockquote:before {
     .carousel h1 {
         font-size: 3rem;
     }
+    .award-text {
+        font-size: 1.2rem;
+    }
+    .glyphicon-star {
+        font-size: 1rem;
+    }
+    .glyphicon-star:first-child {
+        margin-left: 0.4rem;
+    }
     .beautiful {
         font-size: 3.4rem;
     }
@@ -450,6 +550,7 @@ blockquote:before {
     }
     .carousel-caption {
         padding-bottom: 8%;
+        /*left: 8%;*/
     }
     .carousel-indicators {
         display: block;
@@ -462,36 +563,43 @@ blockquote:before {
         width: 750px;
         padding-left: 0;
 
-}
+    }
     .phone-fluid h2 {
         padding-left: 0;
-    }
-
     }
     .reviews {
         padding: 4rem 0;
     }
+
     #gmap {
         height: 729px;
         margin-top: 0;
     }
+
     .footer {
         padding-top: 2rem;
         padding-bottom: 0;
     }
+
     footer h3 {
         text-align: left;
     }
+
     footer p {
         text-align: left;
     }
+
     .contact-info {
         text-align: left;
     }
+
     .social {
         text-align: left;
     }
+
 }
+
+
 
 /* Md Devices, Desktops */
 
@@ -504,6 +612,10 @@ blockquote:before {
     }
     .navbar-brand {
         font-size: 2.5rem;
+    }
+    .carousel-caption {
+        top: 12%;
+       
     }
     .carousel h1 {
         font-size: 3.4rem;
@@ -540,10 +652,20 @@ blockquote:before {
         font-size: 2.8rem;
     }
     .carousel-caption {
-        top: 20%;
+        top: 18%;
+         /*left: 15%;*/
     }
     .carousel h1 {
         font-size: 4rem;
+    }
+    .award-text {
+        font-size: 1.5rem;
+    }
+    .glyphicon-star {
+        font-size: 1.2rem;
+    }
+    .glyphicon-star:first-child {
+        margin-left: 0.6rem;
     }
     .beautiful {
         font-size: 4.5rem;

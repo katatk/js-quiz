@@ -1,10 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="">
-<!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -12,16 +7,12 @@
     <title>Sleek Hair Design</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.min.css">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
 
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-    </script>
-    <!-- <script src="http://code.jquery.com/jquery-1.10.2.js"></script>-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
@@ -30,25 +21,10 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/smooth-scroll.js"></script>
-    <script>
-        $(function () {
-            $("#datepicker").datepicker();
-        });
-    </script>
-    <script>
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            $('.carousel').carousel({
-                interval: false
-            });
-        }
-    </script>
+
 </head>
 
 <body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -71,38 +47,39 @@
                 <li><a href='#book'>Book Now</a>
                 </li>
             </ul>
-
-            <!--/.navbar-collapse -->
         </div>
     </nav>
 
     <div id="carousel-example-generic" class="carousel fade" data-ride="carousel" data-interval="5000" data-pause="false">
+        
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <a name="services"></a>
         </ol>
-
+ 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-
+          
             <div class="item one active">
                 <img src="img/main-img.jpg" alt="...">
                 <div class="carousel-caption">
-                    <h1>We do <br/><span class="beautiful">Beautiful</span><br/> Hair.</h1>
+                    <h1>Voted<br>Best Salon<br> of the Year</h1>
+                    <p class="award-text">- Hair Magazine Australia
+                        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></p>
                 </div>
             </div>
             <div class="item two">
                 <img src="img/main-img2.jpg" alt="...">
                 <div class="carousel-caption">
-                    <h1>We do <br/><span class="beautiful">Beautiful</span><br/> Hair.</h1>
+                    <h1>We Create <br/><span class="beautiful">Beautiful</span><br/> Hair.</h1>
 
                 </div>
-
             </div>
-
+          
         </div>
-
+       
         <!-- Controls -->
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
             <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
@@ -114,49 +91,44 @@
     </div>
 
     <div class="container-fluid">
+        <div class="container" role="main">
 
-        <div class="container">
-            <section class="container" role="main">
+            <h2>We Deliver Exceptional Service. The Result? Beautiful Hair.</h2>
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <img src="img/hair-cutting.jpg" class="first feature-imgs img-responsive" alt="Hair Cuts">
+                    <h3>Cuts.</h3>
+                    <p>Our master stylists can transform your hair from drab to fab. Whether you are after a complete style shake-up or just a trim and tidy. From lobs to bobs, long and flowy to edgy pixie-do's, our skilled team can sculpt your hair into a masterpiece. </p>
+                </div>
 
-                <a name="services"></a>
-                <h2>We Deliver Exceptional Service. The Result? Beautiful Hair.</h2>
-                <div class="row">
-                    <div class="col-xs-12 col-md-4">
-                        <img src="img/hair-cutting.jpg" class="first feature-imgs img-responsive" alt="Hair Cuts">
-                        <h3>Cuts.</h3>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <div class="col-xs-12 col-md-4">
+                    <img src="img/hair-colouring.jpg" class="feature-imgs img-responsive" alt="Hair Colouring">
+                    <h3>Colour.</h3>
+                    <p>Colour is our passion. We can take you from icy platinum to deepest black and vice versa, not in one appointment of course! And any hue in between - Rich naturals to fun pastels, using the lastest techniques: balayage, baby lights, contouring, hand painting and ombre. If you can imagine it, we can create it.</p>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <img src="img/hair-styling.jpg" class="feature-imgs img-responsive" alt="Hair Styling">
+                    <h3>Styling.</h3>
+                    <p>A great style can make your cut and colour really come alive and bring your look together. We are masters of the blowdry, and also style for formal events such as proms and weddings. We can make you feel polished and put together for any occasion.</p>
+                </div>
 
-                    </div>
-
-                    <div class="col-xs-12 col-md-4">
-                        <img src="img/hair-colouring.jpg" class="feature-imgs img-responsive" alt="Hair Colouring">
-                        <h3>Colour.</h3>
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-
-                    </div>
-                    <div class="col-xs-12 col-md-4">
-                        <img src="img/hair-styling.jpg" class="feature-imgs img-responsive" alt="Hair Styling">
-                        <h3>Styling.</h3>
-                        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </section>
+                <!-- row -->
             </div>
-
-
-            <a name="pricing"></a>
-
-            </div>
-
+            <!-- container-fluid -->
         </div>
-
+        <a name="pricing"></a>
+        <!-- container-fluid -->
     </div>
 
     <div class="container-fluid pricing">
         <div class="container phone-fluid">
+
             <h2>Pricing Menu</h2>
-            <table class="table">
+            <table class="table table-responsive">
                 <thead>
                     <th colspan="4">
-                        <h3>Cuts</h3></th>
+                        <h3>Cuts</h3>
+                    </th>
 
                 </thead>
                 <thead>
@@ -195,7 +167,8 @@
                 </tbody>
                 <thead>
                     <th colspan="4">
-                        <h3>Colour</h3></th>
+                        <h3>Colour</h3>
+                    </th>
 
                 </thead>
                 <thead>
@@ -234,7 +207,8 @@
                 </tbody>
                 <thead>
                     <th colspan="4">
-                        <h3>Styling</h3></th>
+                        <h3>Styling</h3>
+                    </th>
 
                 </thead>
                 <thead>
@@ -273,23 +247,25 @@
                 </tbody>
             </table>
         </div>
-        <a name="testimonials"></a>
+ <a name="testimonials"></a>
     </div>
+   
     <div class="container-fluid reviews">
         <div class="container">
+
             <h2>Here's What Our Customers Have to Say ...</h2>
             <div class='col-xs-12 col-sm-5'>
                 <blockquote>
                     <p>The Team at Sleek did an amazing job on my hair. I came in after an at-home colour kit went wrong and they completely tranformed my hair into a beautiful shade of blonde, I could not be more thrilled!</p>
 
-                    <p>Anna</p>
+                    <p>- Anna</p>
                 </blockquote>
             </div>
             <div class='col-xs-12 col-sm-5 col-sm-offset-2'>
                 <blockquote>
                     <p>I found Sleek after a friend of mine raved about their master stylist. She has lovely hair so I made an appointment right away. I found they really listened to what I wanted, now I have a gorgeous style. I will definitely be back again.</p>
 
-                    <p>Kelsey</p>
+                    <p>- Kelsey</p>
                 </blockquote>
             </div>
 
@@ -335,30 +311,37 @@
                             </div>
                             <div class="form-group">
                                 <label for="date">Date <span class="required">*</span> </label>
-                                <br/> (Please Note: Availabilty of selected date is not guaranteed)
-                                <input type="text" id="datepicker" class="form-control">
+                                <input type="date" id="datepicker" class="form-control">
+                                <small class="form-text text-muted">(Please Note: Availabilty of selected date is not guaranteed)</small>
+                            </div>
+                              <div class="form-group">
+                                <label for="date">Preferred Time <span class="required">*</span> </label>
+                               <select name="where" size="1" class="form-control">
+                                    <option>Please Select...</option>
+                                    <option>Morning</option>
+                                    <option>Afternoon</option>
+                                    <option>Evening (Monday)</option>
+                                  </select>
                             </div>
                             <div class="form-group">
                                 <label for="message">Message (optional)
                                 </label>
-                                <textarea name="message" rows="5" cols="20" maxlength="500" placeholder="Please write your message here, max length 500 characters." class="form-control" /></textarea>
+                                <textarea name="message" rows="5" cols="20" maxlength="500" placeholder="Please write your message here, max length 500 characters." class="form-control"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="service">Service</label> <span class="required">*</span>
                                 <select name="where" size="1" class="form-control">
-                                    <option value="select">Please Select...</option>
-                                     <option value="styling">Style Only</option>
-                                    <option value="cut">Cut &amp; Style</option>
-                                    <option value="colour">Colour &amp; Style</option>
-                                    <option value="styling">Cut, Colour &amp; Style</option>
+                                    <option>Please Select...</option>
+                                    <option>Blowdry</option>
+                                    <option>Cut &amp; Blowdry</option>
+                                    <option>Colour &amp; Blowdry</option>
+                                    <option>Cut, Colour &amp; Blowdry</option>
+                                    <option>Styling for Formal Event</option>
                                 </select>
                             </div>
                             <div class="form-group">
-
-                            </div>
-                            <div class="form-group">
                                 <input type="submit" class="btn" name="submit" id="submit" value="Submit" class="form-control">
-                                <input type="reset" class="btn" id="cancel" value="Clear" class="form-control">
+                                <input type="reset" class="btn" value="Clear" class="form-control">
 
                             </div>
                         </form>
@@ -375,9 +358,14 @@
             <div class='row'>
                 <div class='col-xs-12 col-sm-4 col-md-3'>
                     <h3 class="footer-brand">Sleek Hair Design</h3>
-                    <p>Exceptional Service, Beautiful Hair.
+                    <p>Exceptional Service,<br> Beautiful Hair.
                     </p>
-                    <span class="social"><a href="#"><img src="img/fb-2.svg" alt="fb" id="fb"></a><a href="#"><img src="img/pinterest-2.svg" alt="pinterest" id="pinterest"></a><a href="#"><img src="img/insta-2.svg" alt="insta" id="insta"></a><a href="#"><img src="img/twt-2.svg" alt="twt" id="twt"></a></span>
+                    <span class="social">
+                    <img src="img/fb-2.svg" alt="Sleek on facebook" class="social-icon">
+                    <img src="img/pinterest-2.svg" alt="Sleek on pinterest" class="social-icon">
+                    <img src="img/insta-2.svg" alt="Sleek on Instagram" class="social-icon">
+                    <img src="img/twt-2.svg" alt="Sleek on Twitter" class="social-icon">
+                    </span>
                 </div>
 
                 <div class='col-xs-12 col-sm-4 col-md-3'>
@@ -388,7 +376,7 @@
                         </li>
                         <li><i class='glyphicon glyphicon-envelope' alt="email"></i><a href='#'>info@sleekhair.com</a>
                         </li>
-                        <li><i class=' glyphicon glyphicon-map-marker' alt="location"></i>Charlotte St, City
+                        <li><i class=' glyphicon glyphicon-map-marker' alt="location"></i>Charlotte St
                             <br/> Brisbane, QLD 4000
                         </li>
                     </ul>
