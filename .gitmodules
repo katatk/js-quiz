@@ -5,3 +5,6 @@ url = https://github.com/katatk/css-quiz
 [submodule "discover-new-zealand"]
 	path = discover-new-zealand
 	url = https://github.com/katatk/discover-new-zealand
+[submodule "palace"]
+	path = palace
+	url = https://github.com/katatk/palace
