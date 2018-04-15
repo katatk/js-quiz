@@ -1,0 +1,22 @@
+@import "variables";
+@import "mixins";
+@import "global";
+@import "android-support"; 
+
+// components
+@import "navbar";
+@import "mobile-toggler";
+@import "topbar";
+@import "masthead";
+@import "footer";
+@import "gallery"; 
+@import "social";
+@import "back-arrow";
+
+// page-specific styles
+@import "page-home";
+@import "page-house-land"; 
+@import "page-individual-listings"; 
+
+
+

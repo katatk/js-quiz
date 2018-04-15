@@ -1,0 +1,65 @@
+
+/* clear fix */
+
+.isotope:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+/* 4 columns, percentage width */
+
+.grid {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.grid-item {
+    margin-bottom: 30px;
+    a {
+        position: relative;
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .hidden-overlay {
+        cursor: pointer;
+        content: '';
+        display: inline-block;
+        background-color: $primary;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        -webkit-transition: opacity 0.5s ease;
+        transition: opacity 0.5s ease;
+        z-index: 100;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.grid-item--height2 a {
+    padding-bottom: calc(200% + 30px);
+}
+
+
+.gutter-sizer {
+    width: 0;
+}
+
+.grid-item--width2 a {
+    width: calc(200% + 30px);
+}
+
+/* overlay on hover */
+
+.grid a {}

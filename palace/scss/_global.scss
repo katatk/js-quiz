@@ -1,0 +1,189 @@
+// Global styling for this template
+
+html {
+  overflow-x: hidden;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: $text;
+  @include roboto-light;
+}
+
+a {
+  text-decoration: none;
+  color: $green;
+  @include transition-all;
+  @include darken-hover($green);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+p {
+  max-width: 100ch;
+  margin-bottom: 1.5rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1.5rem;
+  @include montserrat-light;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: $primary;
+}
+
+.main-heading {
+  @include montserrat-bold;
+}
+
+.smaller-h1 {
+  font-size: 2rem;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.btn,
+a.btn {
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 100;
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  -webkit-transition: background 1s ease;
+  transition: background 1s ease;
+  text-transform: uppercase;
+  color: #fff;
+  border: 0;
+  /* pill style buttons */
+  border-radius: 999px;
+  /* fallback for browsers that don't support gradients */
+  background-color: $primary;
+  background-image: -webkit-gradient(linear, left top, right top, from($primary), to($green));
+  background-image: linear-gradient(to right, $primary, $green);
+  background-size: 100%;
+  @include montserrat-light;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:before {
+    position: absolute;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    opacity: 0;
+    border-radius: inherit;
+    /* fallback for browsers that don't support gradients */
+    background-color: $primary;
+    background-image: -webkit-gradient(linear, right top, left top, from($primary), to($green));
+    background-image: linear-gradient(to left, $primary, $green);
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &:active,
+  &:focus {
+    /* fallback for browsers that don't support gradients */
+    background-color: $primary;
+    background-image: -webkit-gradient(linear, right top, left top, from($primary), to($green));
+    background-image: linear-gradient(to left, $primary, $green);
+  }
+}
+
+.btn:not([disabled]):not(.disabled).active,
+.btn:not([disabled]):not(.disabled):active {
+  background-image: -webkit-gradient(linear, right top, left top, from($primary), to($green));
+  background-image: linear-gradient(to left, $primary, $green);
+}
+
+.primary-color {
+  color: $primary;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.dropshadow {
+  @include dropshadow;
+}
+
+.dream-home {
+  color: #fff;
+  background-image: url("../img/dream-home.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.table td,
+.table th {
+  border-top: 0;
+  border-bottom: 1px solid #dee1e3;
+}
+
+#map {
+  height: 321px;
+}
+
+.fit-content {
+  height: fit-content;
+}
