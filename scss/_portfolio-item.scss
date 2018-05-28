@@ -9,7 +9,23 @@ section.portfolio-section {
 
     .portfolio-date {
       min-width: none;
+
+      h3 {
+        display: inline-block;
+      }
     }
+  }
+}
+
+.view-link {
+  display: block;
+  text-align: right;
+  float: right;
+  font-size: 0.85rem;
+  margin-left: 1rem;
+  @media (min-width: 992px) {
+    display: inline-block;
+    text-align: center;
   }
 }
 @media (min-width: 768px) {
@@ -20,7 +36,10 @@ section.portfolio-section {
       .portfolio-content {}
 
       .portfolio-date {
-        max-width: 30rem;
+        @media (min-width: 1200px) {
+          max-width: 32%;
+          margin-left: 2rem;
+        }
       }
     }
   }

@@ -1,0 +1,148 @@
+// Global styling for this template
+
+html {
+  font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+  @media (min-width: 992px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  @include body-font;
+  padding-top: 54px;
+  color: $gray-600;
+}
+@media (min-width: 992px) {
+  body {
+    padding-top: 0;
+    padding-left: $sidebar-base-width;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading-font;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $gray-800;
+}
+
+h1 {
+  font-size: 2rem;
+  @media (min-width: 510px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 662px) {
+    font-size: 4rem;
+  }
+  @media (min-width: 992px) and (max-width: 1109px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 1110px) {
+    font-size: 4rem;
+  }
+  @media (min-width: 1285px) {
+    font-size: 5rem;
+  }
+  line-height: 1;
+}
+
+h2 {
+  font-size: 1.8rem;
+  @media (min-width: 510px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 662px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 992px) and (max-width: 1109px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1110px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 1285px) {
+    font-size: 3.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  @include heading-font;
+  font-size: 1.35rem;
+}
+
+.list-social-icons {
+  a {
+    color: rgba(255,255,255,0.2);
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: white;
+    }
+
+    .fa-lg {
+      font-size: 1rem;
+      @media (min-width: 500px) {
+        font-size: 1.75rem;
+      }
+    }
+  }
+
+  .fa-inverse {
+    color: $white;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.list-icons {
+  font-size: 3rem;
+
+  .list-inline-item i {
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.fa-angle-down {
+  animation: bounce 3s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  font-weight: bold;
+}
+
+.flex-end {
+  @media (min-width: 992px) {
+    align-items: flex-end;
+  }
+  justify-content: space-between;
+}

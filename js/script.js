@@ -1,52 +1,28 @@
-// smooth scroll
-var backTop = document.getElementById("scroll-top");
+(function($) {
+  "use strict"; // Start of use strict
 
-// browser window scroll (in pixels) after which the "back to top" link is shown
-var offset = 100;
-
-// duration of the top scrolling animation (in ms)
-var scroll_top_duration = 700;
-
-
-function toggleScrollTop() {
-    if (this.pageYOffset > offset) {
-        backTop.classList.add("visible");
+  // Smooth scrolling using jQuery easing
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: (target.offset().top)
+        }, 1000, "easeInOutExpo");
+        return false;
+      }
     }
+  });
 
-    if (this.pageYOffset < offset) {
-        backTop.classList.remove("visible");
-    }
-}
+  // Closes responsive menu when a scroll trigger link is clicked
+  $('.js-scroll-trigger').click(function() {
+    $('.navbar-collapse').collapse('hide');
+  });
 
-function smoothScroll() {
-   window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-}
+  // Activate scrollspy to add active class to navbar items on scroll
+  $('body').scrollspy({
+    target: '#sideNav'
+  });
 
-// hide or show the back to top link
-window.addEventListener("scroll", toggleScrollTop);
-
-// smooth scroll when back to top link clicked
-backTop.addEventListener("click", smoothScroll);
-
-// attributions popup
-/* $attr_link = $('.attr-link');
-    $popup = $('.attributions');
-    $close = $('.icon-cross');
-
-    // open popup when user clicks link
-    $attr_link.on('click', function (event) {
-        event.preventDefault();
-        $popup.show();
-    });
-
-    // close popup when user clicks cross
-    $close.on('click', function (event) {
-        event.preventDefault();
-        $popup.hide();
-    });
-
-    // close popup when user clicks outside of popup area
-    $popup.focusout(function () {
-        $(this).hide();
-    });
-*/
+})(jQuery); // End of use strict

@@ -1,0 +1,37 @@
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+a {
+  color: $primary;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: darken($primary, 15%);
+  }
+}
+
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-collapse {
+  flex-basis: 0;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 1rem;
+  @media (min-width: 992px) {
+    margin-right: 0;
+  }
+}

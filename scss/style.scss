@@ -1,6 +1,8 @@
-@import "spectre";
-@import "variables-mixins";
-@import "fontello";
-@import "fonts";
-@import "custom";
-@import "to-top";
+// Core variables and mixins
+@import "variables";
+@import "mixins"; // Global CSS
+@import "bootstrap-overrides";
+@import "global";
+@import "nav";
+@import "portfolio-item";
+@import "peel"; // Components
