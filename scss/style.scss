@@ -1,4 +1,8 @@
 // Core variables and mixins
+@import "../vendor/bootstrap/css/bootstrap.scss";
+@import "../vendor/devicons/css/devicons.scss";
+@import "../vendor/font-awesome/scss/font-awesome.scss";
+@import "fonts";
 @import "variables";
 @import "mixins"; // Global CSS
 @import "bootstrap-overrides";
